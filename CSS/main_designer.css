@@ -15,24 +15,120 @@ font-family: 'Megrim', cursive;
 body{
     font-family: 'Ubuntu', sans-serif;
     color: #BDBDBD;
+    margin: 0;
+    padding: 0;
 }
-.left-menu{
+
+nav{
+    background-color: #757575;
+    height: 70px;
+}
+
+ul{
+    padding: 0;
+}
+.grid{
+    display: grid;
+    /* grid-template-columns: 15% 60% 25%; */
+    grid-template-columns: minmax(200px,1fr) minmax(400px,4fr) minmax(300px,2fr);
+    grid-template-rows: 95vh;
+}
+ .left-menu{
     background-color: #212121;
-    display: flex;
-    width: 200px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .right-menu{
     background-color: #212121;
-    display: flex;
-    width: 300px;
+    padding-left: 15px;
+    padding-right: 15px; 
+}
+
+.right-item{
+    margin: 10px;
+    border: 1px solid #BDBDBD;
+    border-radius: 4px;
+    background-color: #757575;
+    width: 90%;
+    position: relative;
+    height: 40px;
+    
+}
+.right-item label{
+    font-size: 10px;
+    text-transform: uppercase;
+    padding: 0 8px;
+    position: absolute;
+    top: 4px;
+}
+.right-item select
+{
+  background-color: #757575;
+  border:0px;
+  font-size: 13px;
+  width: 100%;
+  margin-top: 18px; /*preguntar aquí cómo hacerle más fino para justificarlo abajo*/
+  padding-left: 10px;
+  /* vertical-align: bottom; */
 }
 
 .design{
-    display: flex;
-    width: 300px;
+   background-color: #BDBDBD;
 }
 
 .canvas{
+    /* border: 2px solid #303F9F; */
+    background-color: #FFFFFF;
+    border-top: none;
+    border-bottom: none;
+    /* border-radius: 20px; */
+    margin: 0 80px;
+    height: 100vh;
+} 
 
+.position{
+    margin: 20px 20px;
+    border: 2px solid ;
+    border-radius: 10px;
+    height:110px;
+}
+h6{
+    margin-top: 5px;
+    text-align: center;
+}
+.boton{
+    text-align: center;
+}
+
+#elements{
+    text-transform: uppercase;
+    font-size: 13px;   
+    padding: 10px;
+    background: #757575;
+
+}
+
+
+
+#elements * { list-style:none;}
+#elements li{ line-height:180%;}
+#elements li a{color:#222; text-decoration:none;}
+#elements li a:before{ content:"\025b8"; color:#ddd; margin-right:4px;}
+#elements input[name="list"] {
+    position: absolute;
+    left: -1000em;
+    }
+#elements label:after{ content:"\025b8"; margin-right:4px;}
+#elements input:checked ~ label:after{ content:"\025be";}
+#elements .interior{display: none;}
+#elements input:checked ~ ul{display:flex;}
+
+ .interior{ 
+    display: flex;
+    padding: 0;
+}
+.interiorItem{
+        background: #b3b3b3;
+        color: #757575;
 }
