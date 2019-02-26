@@ -1,98 +1,45 @@
-.dark-primary-color    { background: #303F9F; }
-.default-primary-color { background: #3F51B5; }
-.light-primary-color   { background: #C5CAE9; }
-.text-primary-color    { color: #FFFFFF; }
-.accent-color          { background: #FF9800; }
-.primary-text-color    { color: #212121; }
-.secondary-text-color  { color: #757575; }
-.divider-color         { border-color: #BDBDBD; }
-/*
-font-family: 'Ubuntu', sans-serif;
-font-family: 'Sarabun', sans-serif;
-font-family: 'Megrim', cursive;
-*/
-
-body{
-    font-family: 'Ubuntu', sans-serif;
-    color: #BDBDBD;
-    margin: 0;
-    padding: 0;
-}
-
-nav{
-    background-color: #757575;
-    height: 70px;
-}
-.grid{
+/*background*/
+/*background*/
+/*background*/
+/*color*/
+/*background*/
+/*color*/
+/*color*/
+/*: border-color: */
+body {
+  background-color: #BDBDBD;
+  margin: 0;
+  padding: 0;
+  font-family: "Sarabun", sans-serif;
+  color: #BDBDBD; }
+  body .grid {
     display: grid;
-    /* grid-template-columns: 15% 60% 25%; */
-    grid-template-columns: minmax(200px,1fr) minmax(400px,4fr) minmax(300px,2fr);
-    grid-template-rows: 95vh;
-}
- .left-menu{
-    background-color: #212121;
-    padding-left: 15px;
-    padding-right: 15px;
-}
+    grid-template-columns: minmax(200px, 1fr) minmax(400px, 4fr) minmax(300px, 2fr);
+    grid-template-rows: 100vh; }
+    body .grid .left-menu {
+      background-color: #212121;
+      padding: 10px; }
+      body .grid .left-menu h3 img {
+        width: 30px;
+        border-radius: 50%; }
+      body .grid .left-menu h3 span {
+        margin-left: 15px; }
+      body .grid .left-menu h5 {
+        margin: 10px; }
+    body .grid .design .canvas {
+      align-content: center;
+      background-color: #FFFFFF;
+      border-top: none;
+      border-bottom: none;
+      /* border-radius: 20px; */
+      margin: 0 80px;
+      height: 100vh; }
+    body .grid .right-menu {
+      background-color: #212121;
+      padding: 10px; }
+      body .grid .right-menu div {
+        margin: 15px; }
+    body .grid .canvas {
+      background-color: #FFFFFF; }
 
-.right-menu{
-    background-color: #212121;
-    padding-left: 15px;
-    padding-right: 15px; 
-}
-
-.right-item{
-    margin: 10px;
-    border: 1px solid #BDBDBD;
-    border-radius: 4px;
-    background-color: #757575;
-    width: 90%;
-    position: relative;
-    height: 40px;
-    
-}
-.right-item label{
-    font-size: 10px;
-    text-transform: uppercase;
-    padding: 0 8px;
-    position: absolute;
-    top: 4px;
-}
-.right-item select
-{
-  background-color: #757575;
-  border:0px;
-  font-size: 13px;
-  width: 100%;
-  margin-top: 18px; /*preguntar aquí cómo hacerle más fino para justificarlo abajo*/
-  padding-left: 10px;
-  /* vertical-align: bottom; */
-}
-
-.design{
-   background-color: #BDBDBD;
-}
-
-.canvas{
-    /* border: 2px solid #303F9F; */
-    background-color: #FFFFFF;
-    border-top: none;
-    border-bottom: none;
-    /* border-radius: 20px; */
-    margin: 0 80px;
-    height: 100vh;
-} 
-
-.position{
-    margin: 20px 20px;
-    border: 2px solid ;
-    border-radius: 10px;
-    height:110px;
-}
-h6{
-    margin-top: 5px;
-    text-align: center;
-}
-.boton{
-    text-align: center;
-}
+/*# sourceMappingURL=main_designer.css.map */
