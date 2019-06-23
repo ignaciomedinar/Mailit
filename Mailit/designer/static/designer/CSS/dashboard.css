@@ -1,0 +1,248 @@
+h1, h3, h4, h5, h6, form, body, p{
+  font-family: helvetica;
+}
+
+
+body{
+	background-color: #606060;
+ 	position: absolute;
+ 	margin: 0;
+ 	width: 100%;
+ 	height: 100%;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .gone {
+    display: none;
+  }
+
+  .portada{
+    height: 10% !important;
+  }
+
+  .logoSmall{
+    background-color: #2b2b2b00 !important;
+  }
+
+  .logoSmall h2{
+    display: none;
+  }
+
+  .theSpace{
+    height: 20px !important;
+  }
+  
+  .doubleder{
+  width: 100%;
+  }
+}
+
+
+
+.doubleder{
+  /*margin-left: 40px; */
+  position: absolute;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+  display: flex;
+   width: 96%;
+  height: 100%;
+   align-items: center;
+  justify-content: center;
+  background: #606060;
+   flex-wrap:wrap;
+}
+
+
+
+#board{
+    /*background-color: blue;*/
+     display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+  display: flex;
+  /*position: absolute;*/
+  width: 568px;
+  height: 150px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+    margin: 0;
+    flex-wrap:wrap;
+
+
+}
+
+
+#dash{
+    /*background-color: blue;*/
+     display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+  display: flex;
+  /*position: absolute;*/
+  width: 170px;
+  height: 150px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+    margin: 0;
+    flex-wrap:wrap;
+
+
+}
+
+/*.row {
+    width: auto;
+    border: 1px solid blue;
+}*/
+
+.pastProjects{
+  margin: 10px;
+  border-radius: 4px;
+  position: relative;
+  width: 150px;
+  height: 170px;
+  text-align: center;
+
+}
+
+.pProjets{
+  border-radius: 4px;
+  height: 90%;
+  background-color: white;
+  box-shadow: 1px 1px 16px #353535;
+  padding-top: 7.5px;
+}
+
+
+.pastProjects p{
+  color: white;
+}
+
+
+.pCirculo{
+  text-align: center;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  line-height: 135px;
+  font-size: -webkit-xxx-large;
+  background-color: #606060;
+  text-decoration: none;
+  margin: auto;
+  vertical-align: middle;
+}
+
+
+
+/*<div style="padding-top:7.5px;height:142.5px;width:150px;">
+  <div style="margin-left:auto;margin-right:auto;width:135px;height:135px;"></div>
+</div>*/
+
+
+
+.pCirculo a{
+  font-size: -webkit-xxx-large;
+  text-decoration: none;
+  color: white;
+}
+
+.arrow{
+  line-height: 150px;
+  vertical-align: center;
+  font-size: 23px;
+  color: white;
+  margin: 2px;
+  border-radius: 4px;
+  position: relative;
+  width: 25px;
+  height: 150px;
+  /*background-color: coral;*/
+}
+
+.arrow a{
+  color: white;
+  text-decoration: none;
+}
+
+.newProject{
+  /*margin: 10px;*/
+  border-radius: 4px;
+  position: relative;
+  width: 150px;
+  height: 170px;
+  /*background-color: yellow;*/
+  /*box-shadow: 1px 1px 30px #212121;*/
+}
+ 
+
+
+
+
+
+/* Safari 6.1+ */
+/*#board div:nth-of-type(1) {-webkit-flex-grow: 0;}
+#board div:nth-of-type(2) {-webkit-flex-grow: 2;}
+#board div:nth-of-type(3) {-webkit-flex-grow: 2;}
+#board div:nth-of-type(4) {-webkit-flex-grow: 2;}
+#board div:nth-of-type(5) {-webkit-flex-grow: 0;}
+*/
+
+
+
+/* Standard syntax */
+/*#board div:nth-of-type(1) {flex-grow: 0;}
+#board div:nth-of-type(2) {flex-grow: 2;}
+#board div:nth-of-type(3) {flex-grow: 2;}
+#board div:nth-of-type(4) {flex-grow: 2;}
+#board div:nth-of-type(5) {flex-grow: 0;}*/
+
+
+
+
+
+
+
+.logoSmall{
+	background-color: #2b2b2b;
+	font-family: 'Megrim';
+	width: 40px;
+	height: 100%;
+	margin: 0;
+	color: #ffffff;
+	text-align: center;
+}
+
+
+
+
+#dashboard{
+
+}
+
+
+
+
+
+.portada{
+  width: 45px;
+  height: 100%;
+  position: absolute;
+
+}
+
+
+
+
+
+.theSpace{
+  height: 1%;
+}
+
+

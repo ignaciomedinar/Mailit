@@ -1,0 +1,6 @@
+
+@mixin myMixin($h,$w,$bc){
+    height: $h;
+    width: $w;
+    background-color: $bc;
+}

@@ -1,0 +1,84 @@
+body{
+        font-family: 'Ubuntu', sans-serif;
+        color: #BDBDBD;
+        margin: 0;
+        padding: 0;
+    }
+    
+    nav{
+        background-color: #757575;
+        height: 70px;
+    }
+    .grid{
+        display: grid;
+        /* grid-template-columns: 15% 60% 25%; */
+        grid-template-columns: minmax(200px,1fr) minmax(400px,4fr) minmax(300px,2fr);
+        grid-template-rows: 95vh;
+    }
+     .left-menu{
+        background-color: #212121;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .right-menu{
+        background-color: #212121;
+        padding-left: 15px;
+        padding-right: 15px; 
+    }
+    
+    .right-item{
+        margin: 10px;
+        border: 1px solid #BDBDBD;
+        border-radius: 4px;
+        background-color: #757575;
+        width: 90%;
+        position: relative;
+        height: 40px;
+        
+    }
+    .right-item label{
+        font-size: 10px;
+        text-transform: uppercase;
+        padding: 0 8px;
+        position: absolute;
+        top: 4px;
+    }
+    .right-item select
+    {
+      background-color: #757575;
+      border:0px;
+      font-size: 13px;
+      width: 100%;
+      margin-top: 18px; /*preguntar aquí cómo hacerle más fino para justificarlo abajo*/
+      padding-left: 10px;
+      /* vertical-align: bottom; */
+    }
+    
+    .design{
+       background-color: #BDBDBD;
+    }
+    
+    .canvas{
+        /* border: 2px solid #303F9F; */
+        background-color: #FFFFFF;
+        border-top: none;
+        border-bottom: none;
+        /* border-radius: 20px; */
+        margin: 0 80px;
+        height: 100vh;
+    } 
+    
+    .position{
+        margin: 20px 20px;
+        border: 2px solid ;
+        border-radius: 10px;
+        height:110px;
+    }
+    h6{
+        margin-top: 5px;
+        text-align: center;
+    }
+    .boton{
+        text-align: center;
+    }
