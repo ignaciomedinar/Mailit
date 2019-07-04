@@ -1,0 +1,362 @@
+.dark-primary-color    { background: #303F9F; }
+.default-primary-color { background: #3F51B5; }
+.light-primary-color   { background: #C5CAE9; }
+.text-primary-color    { color: #FFFFFF; }
+.accent-color          { background: #Fb7502; }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #757575; }
+.divider-color         { border-color: #BDBDBD; }
+/*
+font-family: 'Ubuntu', sans-serif;
+font-family: 'Sarabun', sans-serif;
+font-family: 'Megrim', cursive;
+*/
+
+body{
+    font-family: 'Ubuntu', sans-serif;
+    color: #BDBDBD;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+  color: #bdbdbd;
+}
+
+nav{
+    background-color: #757575;
+    height: 70px;
+}
+
+
+/* scrollBAR */
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #212121;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+
+#idsuperWrapper{
+  background-color: #bdbdbd;
+    display: flex;
+
+}
+ .left-menu{
+   width:45px;
+    background-color: #212121;
+
+
+  
+    /* flex-basis: 30px; */
+    padding: 0px;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    
+    /* padding-right: 15px; */
+}
+
+#credenciales{
+  height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  padding-top: 10px;
+  padding-left: 6px;
+  background-color: black;
+
+}
+
+#dotHam{
+  margin-top: 4px;
+  font-size: 2em;
+  color: #Fb7502;
+}
+
+/* #hamburguer{
+  position: absolute;
+    right: 10px;
+} */
+
+#informacion{
+  display: none;
+  padding-left: 5px;
+    width: 200px;
+}
+
+body .superWrapper .left-menu h3 img{
+        width: 30px;
+        border-radius: 50%;
+      }
+
+body .superWrapper .left-menu h3 span {
+        margin-left: 15px;
+      }
+
+body .superWrapper .left-menu h3 {
+        margin: 0px;
+      }
+      
+
+
+.right-menu{
+    width:316px;
+    background-color: #212121;
+    /* padding-left: 15px;
+    padding-right: 15px; */
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100vh;
+    
+    right: 0px;
+
+
+    /*transition: all .51s ease;*/
+    /*padding: 10px 13px 10px 10px;*/
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+}
+
+
+.btnHand{
+  cursor: pointer;
+}
+
+
+#allModules{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.right-item{
+    margin: 10px;
+    border: 1px solid #BDBDBD;
+    border-radius: 4px;
+    background-color: #757575;
+    width: 90%;
+    position: relative;
+    height: 40px;
+
+}
+.right-item label{
+    font-size: 10px;
+    text-transform: uppercase;
+    padding: 0 8px;
+    position: absolute;
+    top: 4px;
+}
+.right-item select
+{
+  background-color: #757575;
+  border:0px;
+  font-size: 13px;
+  width: 100%;
+  margin-top: 18px; /*preguntar aquí cómo hacerle más fino para justificarlo abajo*/
+  padding-left: 10px;
+  /* vertical-align: bottom; */
+}
+
+
+
+
+
+.fatherModules{
+  /* padding: 0px 10px 10px; */
+  background-color: #757575;
+  /* height: 20px; */
+  border: solid 1px #212121;
+}
+
+
+.fatherModules>a{
+  text-decoration: none;
+  background: #747474;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  height: 30px;
+  padding-top: 17px;
+  padding-left: 10px;
+}
+
+.fatherModules>a:hover{
+  background: #888888;
+
+}
+
+
+.fatherModules>label:after{
+    content: " \25b6";
+    font-size: 12px;
+}
+
+.dropdown,
+.dropdownHero,
+.dropdownText,
+.dropdownImage,
+.dropdownExtra,
+.dropdownFooter,
+.dropdownWidget
+{
+  display: none;
+  flex-flow: wrap;
+  margin: 0px 0 10px 10px;
+}
+
+
+#headerInput,
+#heroInput,
+#textInput,
+#imageInput,
+#extraInput,
+#footerInput,
+#widgetInput,
+#headModules
+{
+  display: none;
+}
+
+.fatherModules label{
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome and Opera */
+
+}
+
+/* .fatherModules>label:after{
+    content: " <";
+} */
+
+.fatherModules input[type=radio]:checked ~ .dropdown{
+  display: flex;
+
+}
+
+.fatherModules input[type=radio]:checked ~ label:after{
+
+  content: " \25bc" ;
+}
+
+
+.fatherModules input[type=radio]:checked ~ .dropdownHero{
+  display: flex;
+
+}
+.fatherModules input[type=radio]:checked ~ .dropdownText{
+  display: flex;
+}
+.fatherModules input[type=radio]:checked ~ .dropdownImage{
+  display: flex;
+}
+.fatherModules input[type=radio]:checked ~ .dropdownExtra{
+  display: flex;
+}
+.fatherModules input[type=radio]:checked ~ .dropdownFooter{
+  display: flex;
+}
+.fatherModules input[type=radio]:checked ~ .dropdownWidget{
+  display: flex;
+}
+
+.moduleItem a{
+  /* display: flex; */
+}
+
+.moduleItem a img{
+  width:90px;
+  /* flex-wrap: wrap; */
+}
+
+.moduleItem{
+  height: 90px;
+  width: 90px;
+  /* height: auto;
+  width:32%; */
+  flex-wrap: wrap;
+  border: solid 1px #757575;
+}
+
+
+#plecaModules{
+  margin: 30px 0;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.tituloModules{
+  margin: 0px 0 0 14px; 
+}
+
+.design{
+   background-color: #BDBDBD;
+   flex-grow: 2;
+   flex-shrink: 2;
+   overflow: hidden;
+}
+
+
+#projectName{
+  color: #212121;
+  text-align: center;
+}
+
+.toCanvas{
+    max-width: 620px;
+    min-width: 310px;
+    background-color: #ffffff;
+    height: 93.4vh;
+    margin: 0 auto;
+    box-shadow: 2px 2px 10px rgb(63, 63, 63);
+    overflow-x: hidden;
+    overflow-y: overlay;
+}
+
+.position{
+    margin: 20px 20px;
+    border: 2px solid ;
+    border-radius: 10px;
+    height:110px;
+}
+h6{
+    margin-top: 5px;
+    text-align: center;
+}
+.boton{
+    text-align: center;
+}
+
+
+#editor{
+  right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 2;
+    height: 50vh;
+    width: 333px;
+    background-color: #ffffffe8;
+}

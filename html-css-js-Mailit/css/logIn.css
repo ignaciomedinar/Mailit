@@ -1,0 +1,182 @@
+h1, h2, h3, h4, h5, h6, form, body{
+  font-family: helvetica;
+}
+
+
+body{
+  background-color: #505050;
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.portada{
+  position: relative;
+}
+
+
+
+.logo{
+
+  width: 100%;
+  /* height: 40%; */
+  margin: 0;
+}
+
+.logo h2, h6{
+  font-family: helvetica;
+  color: #ffffff;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#tituLogo{
+  font-family: Megrim;
+  font-weight: lighter;
+  color: #ffffff;
+  margin: 0 auto;
+  font-size: 2.5em;
+  text-align: center;
+}
+
+
+
+.theSpace{
+  /* background-color: chocolate; */
+  height: 50%;
+}
+
+
+#logForm{
+  height: fit-content;
+}
+
+
+.firstTimers{
+  margin-top: 20px;
+  display: grid;
+  width: 100%;
+
+
+
+}
+
+
+.logInWraper{
+
+  width: 100%;
+}
+
+.logIn{
+
+  width: 100%;
+  height: fit-content;
+  margin: 0px auto;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+
+.logIn h4{
+  font-family: helvetica;
+  color: #ffffff;
+  margin: 10px auto;
+  text-align: center;
+}
+
+
+
+input:-internal-autofill-selected {
+  background-color: #303030 !important;
+  background-image: none !important;
+  color: rgb(0, 0, 0) !important;
+}
+
+
+
+input[type=password]{
+width: 100%;
+margin: 10px auto;
+display: block;
+height: 30px;
+text-align: center;
+background-color: #4a4a4a;
+border: none;
+color: #ffffff;
+}
+
+
+
+input[type=text]{
+  width: 100%;
+  margin: 10px auto;
+  display: block;
+  height: 30px;
+  text-align: center;
+  background-color: #4a4a4a;
+  border: none;
+  color: #ffffff;
+  }
+
+
+input:focus{
+  outline: #fb7502 auto 5px;
+
+}
+
+.continuar{
+  margin: 25px 61px 0px;
+  font-size: 10px;
+  color: white;
+  /* flex: none; */
+  text-align: center;
+}
+
+.bSign{
+  background-color: #df6811;
+  width: 50%;
+  margin: 12px auto;
+  text-align: center;
+  padding: 10px 20px;
+  color: #303030;
+  text-decoration: none;
+}
+
+.nextOptions{
+  margin: 2px auto;
+  height: max-content;
+/* background-color: darkgreen; */
+  display: flex;
+  justify-content: space-between;
+  flex: 1 100%;
+
+
+}
+
+.nextOptions a{
+  text-decoration: none;
+}
+
+.recuperar{
+  text-align: left;
+  color: #909090;
+  font-size: 0.6em;
+}
+
+.go{
+  fill: #fb7502;
+  text-decoration: none;
+  width: 30px;
+  margin: 0;
+  font-size: 2em;
+}
+
+.tarjetaLogIn{
+  margin: 100px auto;
+  position: relative;
+  padding: 30px;
+  width: 250px;
+  background: #404040;
+}
