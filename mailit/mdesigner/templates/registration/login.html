@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %} - logIn{% endblock %}
+
+{% block contenido %}
+
+<div class="logInWraper">
+<!-- <p class="continuar">Continuar como:</p>
+<h4 id="preSign">VALDERRAMA</h4> -->
+  <form id= "logForm" action="" method="POST">
+    {% csrf_token %}
+    <!-- <label for="GET-name">password</label> -->
+    <input id="username" type="text" name="username" maxlength="10" placeholder="User name" required>
+    <input id="GET-password" type="password" name="password" maxlength="10" placeholder="password" required>
+    <!-- <label for="password">password</label> -->
+    <!-- <input type="submit" value="Save"> -->
+    <div class= "nextOptions">
+      <a href="#"><h6 class="recuperar">recuperar password</h6></a>
+      <input type="submit" name="submit" value="Enviar" />
+      <!-- <a href="dashboard.html"><svg class="go" width="100%" height="100%" viewBox="0 0 134 84" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path d="M0.228,48.703l0,-13.804l109.992,0l-26.663,-26.668l8.06,-8.06l41.631,41.63l-41.631,41.63l-8.06,-8.06l26.663,-26.668l-109.992,0Z"/></svg></a> -->
+    </div>
+    {% if next %}
+    <input type="hidden" name="next" value="{{ next }}" />
+    {% else %}
+    <input type="hidden" name="next" value="/" />
+    {% endif %}
+    {% if msg %}
+    <aside class="alert alert-dismissible alert-danger">
+        {{ msg }}
+    </aside>
+    {% endif %}
+  </form>
+</div>
+
+{% endblock %}

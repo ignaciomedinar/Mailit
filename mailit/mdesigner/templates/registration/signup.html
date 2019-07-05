@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %} - SignUp{% endblock %}
+
+{% block contenido %}
+<h4>First Timers</h4>
+<form id= "logForm" action="">
+  <aside>
+    {% csrf_token %}
+    <input id="username_signup" type="text" name="username_signup" maxlength="20" placeholder="User Name" required>
+    <input id="name_signup" type="text" name="name_signup" maxlength="20" placeholder="Name" required>
+    <input id="lastname_signup" type="text" name="lastname_signup" maxlength="20" placeholder="Last Names" required>
+    <input id="email_signup" type="email" name="email_signup" maxlength="30" placeholder="E-mail" required>
+    <input id="password_signup" type="password" name="password_signup" maxlength="30" placeholder="Password" required>
+    <input id="password_confirmation" type="password" name="password_confirmation" maxlength="30" placeholder="Repeat Password" required>
+    <input type="submit" name="submit" class="bSign" value="Sign up"/>
+  </aside>
+  {% if next %}
+  <input type="hidden" name="next" value="{{ next }}" />
+  {% else %}
+  <input type="hidden" name="next" value="/" />
+  {% endif %}
+  {% if msg %}
+  <aside class="alert alert-dismissible alert-danger">
+      {{ msg }}
+  </aside>
+  {% endif %}
+</form>
+
+{% endblock %}
