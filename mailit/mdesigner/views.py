@@ -73,3 +73,13 @@ def signup_user(request):
             "msg":msg,
         }
     )
+
+@login_required()
+def dashboard_view(request):
+    """ Vista para atender la petición de la url / """
+    return render (request, "mdesigner/dashboard.html")
+
+@login_required()
+def designer_view(request):
+    """ Vista para atender la petición de la url / """
+    return render (request, "mdesigner/designer.html")
