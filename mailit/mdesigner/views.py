@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from .models import Usuario
+from .models import Usuario, Tipousuario
 
 import datetime
 
@@ -22,7 +22,7 @@ def login_user(request):
         # Se obtienen los datos del formulario
         username = request.POST["username"]
         password = request.POST["password"]
-        next = request.GET.get("next", "/")
+        next = request.GET.get("next", "/dashboard/")
         print(username)
         acceso = authenticate(username=username, password=password)
         if acceso is not None:
@@ -36,9 +36,11 @@ def login_user(request):
     else:
         # Si no hay datos POST
         msg = ""
+    #tipoUsuarios= Tipousuario.object.all() #por qué no me deja
     return render(request, "registration/login.html",
         {
             "msg":msg,
+            #"tipoUsuarios":tipoUsuarios,
         }
     )
 
@@ -80,6 +82,33 @@ def dashboard_view(request):
     return render (request, "mdesigner/dashboard.html")
 
 @login_required()
+def project_new_view(request):
+    """ vista para project new"""
+    #form = OptionForm()
+    #options = Target.objects.filter()
+    return render(request, 'mdesigner/project_new.html')
+
+@login_required()
 def designer_view(request):
     """ Vista para atender la petición de la url / """
     return render (request, "mdesigner/designer.html")
+
+@login_required()
+def dashboard_reviewer_view(request):
+    """ Vista para atender la petición de la url / """
+    return render (request, "mdesigner/dashboardrev.html")
+
+@login_required()
+def dashboard_admin_view(request):
+    """ Vista para atender la petición de la url / """
+    return render (request, "mdesigner/dashboardadmin.html")
+
+@login_required()
+def designer_reviewer_view(request):
+    """ Vista para atender la petición de la url / """
+    return render (request, "mdesigner/designerrev.html")
+
+@login_required()
+def designer_admin_view(request):
+    """ Vista para atender la petición de la url / """
+    return render (request, "mdesigner/designeradmin.html")

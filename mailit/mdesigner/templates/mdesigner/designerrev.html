@@ -1,0 +1,11 @@
+{% extends "designer_base.html" %}
+
+{% block title%} - Reviewer{% endblock %}
+
+{% block cont %}
+<form id= "comments" action="" method="POST">
+  {% csrf_token %}
+  <input type="text" name="comments" placeholder="Write your comments" value="">
+  <input type="submit" name="submit" value="Send"/>
+</form>
+{% endblock cont %}

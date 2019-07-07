@@ -33,8 +33,8 @@ class Empresa(models.Model):
 class Usuario(models.Model):
     """Define la tabla tipo usuario"""
     username = models.CharField(max_length=40)
-    nombre = models.CharField(max_length=40)
-    apellidos = models.CharField(max_length=80)
+    nombre = models.CharField(max_length=40,null=True, blank= True)
+    apellidos = models.CharField(max_length=80,null=True, blank= True)
     profile_image = models.FileField(null=True, blank= True)
     password = models.CharField(max_length=50)
     email = models.EmailField(max_length=100)
