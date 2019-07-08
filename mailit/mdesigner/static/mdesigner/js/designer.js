@@ -47,8 +47,8 @@ dropdownWidget.style.display = "none";
 
 
 function theButton(theTarget){
-  
-    if(theTarget.style.display == "none"){  
+
+    if(theTarget.style.display == "none"){
         theTarget.style.display = "flex"
     }else{
         theTarget.style.display = "none"
@@ -64,7 +64,7 @@ function loadTheHTML(){
 
     mailCanvas.innerHTML +=
         `
-        
+
         <!-- START: BP01 Master - Simple Default -->
 <!--[if mso | IE]>
 <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="620" align="center" style="width:620px;">
@@ -88,7 +88,7 @@ function loadTheHTML(){
                       <tr>
                         <td class="bp-logo" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 60px;" width="60">
                           <a href="http://www.americanexpress.com/australia" target="_blank" style="font-family: HelveticaNeue, Helvetica Neue, Helvetica, Arial, sans-serif;">
-                            <img src="../images/AMXIMG_250x250_amex_logo.jpg" alt="AMERICAN EXPRESS" title="American Express Logo"
+                            <img src="../static/images/AMXIMG_250x250_amex_logo.jpg" alt="AMERICAN EXPRESS" title="American Express Logo"
                               height="auto" style="-ms-interpolation-mode: bicubic; border: 0 none; color: #333333; display: block; font-family: sans-serif; font-size: 10px; height: auto; line-height: 100%; outline: none; text-decoration: none; width: 60px;"
                               width="60">
                           </a>
@@ -97,7 +97,7 @@ function loadTheHTML(){
 
                         <td class="bp-tagline" width="65" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                           <a href="#LINK_TO" target="_blank" style="font-family: HelveticaNeue, Helvetica Neue, Helvetica, Arial, sans-serif;">
-                            <img src="../images/DLLWI.gif" alt="Don't live life without it" title="Don't live life without it" height="auto"
+                            <img src="../static/images/DLLWI.gif" alt="Don't live life without it" title="Don't live life without it" height="auto"
                               style="-ms-interpolation-mode: bicubic; border: 0 none; color: #333333; display: block; font-family: sans-serif; font-size: 12px; height: auto; line-height: 100%; outline: none; text-decoration: none; width: 65px;"
                               width="65">
                           </a>
@@ -181,10 +181,10 @@ function loadTheHTML(){
 </td></tr></table>
 <![endif]-->
 <!-- END: BP01 Master - Simple Default -->
-        
-        
+
+
         `
-    
+
 
 }
 
@@ -229,7 +229,7 @@ function startup() {
 
 
 
-    
+
 
     color = event.target.value;
     // txtTitulo.innerText = event.target.value;
@@ -238,7 +238,7 @@ function startup() {
     // p.innerHTML = color;
     // cambiaColor.innerHTML = color;
     console.log(color);
-  
+
     if (cambiaColor) {
       cambiaColor.style.backgroundColor = event.target.value;
     //   p.style.color = event.target.value;
@@ -255,7 +255,7 @@ function startup() {
         txtCuerpo.innerText = event.target.value;
       //   p.style.color = event.target.value;
       //   color = p.style.color;
-      }  
+      }
   }
 
   function updateAll(event) {
@@ -266,7 +266,7 @@ function startup() {
     txtCuerpo.innerHTML = event.target.value;
     txtTitulo.innerText = event.target.value;
   });
-}  
+}
 
 
 
@@ -282,10 +282,10 @@ var textTitulo = "Este es un título dinámico"
 var textInside = "El texto debe cambiar con esta información";
 
 function loadTheHeroOne(){
-    
+
     mailCanvas.innerHTML +=
     `
-    
+
 
 
     <!-- START: HB01 Block Left -->
@@ -372,7 +372,7 @@ function loadTheHeroOne(){
                             <tbody>
                               <tr>
                                 <td style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 414px;">
-                                  <img src="../images/AMXIMG_414x320_placeholder.png" alt="" title="" height="320" style="-ms-interpolation-mode: bicubic; border: 0 none; display: block; height: 320px; line-height: 100%; outline: none; text-decoration: none; width: 414px;"
+                                  <img src="../static/images/AMXIMG_414x320_placeholder.png" alt="" title="" height="320" style="-ms-interpolation-mode: bicubic; border: 0 none; display: block; height: 320px; line-height: 100%; outline: none; text-decoration: none; width: 414px;"
                                     width="414">
                                 </td>
                               </tr>
@@ -400,8 +400,8 @@ function loadTheHeroOne(){
 
 
 
-    
-    
+
+
     `
 }
 
@@ -430,7 +430,7 @@ dotHam.style.marginLeft = '1%';
 usuario.style.opacity = "0.0";
 informacion.style.marginLeft = "-700px";
 usuario.style.display = "none";
-headers.style.backgroundColor = "#757575"; 
+headers.style.backgroundColor = "#757575";
 
 
 
@@ -443,20 +443,20 @@ function openMenu(){
     if(mLeft.style.width == "45px"){
 
         usuario.style.display = "block";
-        informacion.style.display = "block" 
-        createjs.Tween.get(informacion).to({marginLeft:"0"},1000,createjs.Ease.sineOut); 
-        createjs.Tween.get(dotHam).to({marginLeft:"65"},1000,createjs.Ease.sineOut); 
+        informacion.style.display = "block"
+        createjs.Tween.get(informacion).to({marginLeft:"0"},1000,createjs.Ease.sineOut);
+        createjs.Tween.get(dotHam).to({marginLeft:"65"},1000,createjs.Ease.sineOut);
         createjs.Tween.get(usuario).to({opacity:"0.9"},1000,createjs.Ease.sineOut);
-        createjs.Tween.get(mLeft).to({width:"206"},1000,createjs.Ease.sineOut); 
+        createjs.Tween.get(mLeft).to({width:"206"},1000,createjs.Ease.sineOut);
     }else{
-       
-        informacion.style.display = "none" 
+
+        informacion.style.display = "none"
         usuario.style.display = "none";
         createjs.Tween.get(informacion).to({marginLeft:"-700"},1000,createjs.Ease.sineOut);
         createjs.Tween.get(informacion).to({opacity:"0"},1000,createjs.Ease.sineIn);
         createjs.Tween.get(usuario).to({opacity:"0"},1000,createjs.Ease.sineIn);
         createjs.Tween.get(dotHam).to({marginLeft:"1"},1000,createjs.Ease.sineIn);
-        createjs.Tween.get(mLeft).to({width:"45"},1000,createjs.Ease.sineIn);  
+        createjs.Tween.get(mLeft).to({width:"45"},1000,createjs.Ease.sineIn);
     }
 }
 
@@ -473,15 +473,15 @@ function openModules(){
 
     if(modulesMenus.style.width == "333px"){
         allModules.style.display = "none";
-        tituloMo.style.display = "none"; 
-        
-        createjs.Tween.get(modulesMenus).to({width:"46"},1000,createjs.Ease.sineOut);  
-        createjs.Tween.get(allModules).to({marginLeft:"370"},1000,createjs.Ease.sineOut); 
+        tituloMo.style.display = "none";
+
+        createjs.Tween.get(modulesMenus).to({width:"46"},1000,createjs.Ease.sineOut);
+        createjs.Tween.get(allModules).to({marginLeft:"370"},1000,createjs.Ease.sineOut);
     }else{
-       
-        tituloMo.style.display = "inherit"; 
+
+        tituloMo.style.display = "inherit";
         allModules.style.display = "inherit";
         createjs.Tween.get(modulesMenus).to({width:"333"},1000,createjs.Ease.sineIn);
-        createjs.Tween.get(allModules).to({marginLeft:"0"},1000,createjs.Ease.sineOut);   
+        createjs.Tween.get(allModules).to({marginLeft:"0"},1000,createjs.Ease.sineOut);
     }
 }

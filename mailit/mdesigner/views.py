@@ -84,8 +84,11 @@ def dashboard_view(request):
 @login_required()
 def project_new_view(request):
     """ vista para project new"""
-    #form = OptionForm()
-    #options = Target.objects.filter()
+    if request.method == "POST":
+        project_new = request.POST["nombreProyecto"]
+        LNN_new = request.POST["LNN"]
+        print(project_new)
+        print(LNN_new)
     return render(request, 'mdesigner/project_new.html')
 
 @login_required()
@@ -101,6 +104,18 @@ def dashboard_reviewer_view(request):
 @login_required()
 def dashboard_admin_view(request):
     """ Vista para atender la petición de la url / """
+    if "Create_User" in request.POST: #dos botones, no sirve
+        username_new = request.POST["username_signup"]
+        email_new = request.POST["email_signup"]
+        password_new = request.POST[""]
+        print(username_new)
+        print(email_new)
+    elif 'Create_Company' in request.POST:
+        company_new=request.POST["companyname"]
+        short_company_new=request.POST["shortcompany"]
+    else:
+        print('no sirve')
+
     return render (request, "mdesigner/dashboardadmin.html")
 
 @login_required()
