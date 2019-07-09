@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %} - Profile{% endblock %}
+
+{% block contenido %}
+<h4>First Timers</h4>
+<form id= "logForm" action="">
+  <aside>
+    {% csrf_token %}
+    <input id="name_signup" type="text" name="name_signup" maxlength="20" placeholder="Name" />
+    <input id="lastname_signup" type="text" name="lastname_signup" maxlength="20" placeholder="Last Names"/>
+    <input id="password_signup" type="password" name="password_signup" maxlength="30" placeholder="Password" />
+    <input id="password_confirmation" type="password" name="password_confirmation" maxlength="30" placeholder="Repeat Password" />
+    <p>Select profile picture</p>
+    <input id="profile_image" type="file" alt="Submit" name="profile_image"/>
+    <input type="submit" name="submit" class="bSign" value="Sign up"/>
+  </aside>
+  {% if next %}
+  <input type="hidden" name="next" value="{{ next }}" />
+  {% else %}
+  <input type="hidden" name="next" value="/" />
+  {% endif %}
+  {% if msg %}
+  <aside class="alert alert-dismissible alert-danger">
+      {{ msg }}
+  </aside>
+  {% endif %}
+</form>
+
+{% endblock %}

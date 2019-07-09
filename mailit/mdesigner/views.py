@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from .models import Usuario, Tipousuario
+from .models import Usuario, Tipousuario, Empresa
 
 import datetime
 
@@ -79,16 +79,20 @@ def signup_user(request):
 @login_required()
 def dashboard_view(request):
     """ Vista para atender la petición de la url / """
-    return render (request, "mdesigner/dashboard.html")
+    #usuarios=Usuario.objects.get(id)
+    #print(usuarios)
+    return render (request, "mdesigner/dashboard.html",{
+        #"usuarios": usuarios,
+    })
 
 @login_required()
 def project_new_view(request):
     """ vista para project new"""
     if request.method == "POST":
         project_new = request.POST["nombreProyecto"]
-        LNN_new = request.POST["LNN"]
+        # LNN_new = request.POST["LNN"]
         print(project_new)
-        print(LNN_new)
+
     return render(request, 'mdesigner/project_new.html')
 
 @login_required()
@@ -99,6 +103,7 @@ def designer_view(request):
 @login_required()
 def dashboard_reviewer_view(request):
     """ Vista para atender la petición de la url / """
+    usuarios
     return render (request, "mdesigner/dashboardrev.html")
 
 @login_required()
@@ -107,23 +112,43 @@ def dashboard_admin_view(request):
     if "Create_User" in request.POST: #dos botones, no sirve
         username_new = request.POST["username_signup"]
         email_new = request.POST["email_signup"]
-        password_new = request.POST[""]
+        password_new = request.POST["password_confirmation"]
         print(username_new)
         print(email_new)
     elif 'Create_Company' in request.POST:
-        company_new=request.POST["companyname"]
-        short_company_new=request.POST["shortcompany"]
+        company_new=request.POST["companyname_new"]
+        short_company_new=request.POST["shortcompany_new"]
+    elif 'Create_Target' in request.POST:
+        company=request.POST["companyname_target"]
+        target1=request.POST["targetname1"]
+        target2=request.POST["targetname2"]
+        target3=request.POST["targetname3"]
+        target4=request.POST["targetname4"]
+        target5=request.POST["targetname5"]
+        target6=request.POST["targetname6"]
     else:
         print('no sirve')
-
-    return render (request, "mdesigner/dashboardadmin.html")
+    companies=Empresa.objects.all()
+    print(companies)
+    return render (request, "mdesigner/dashboardadmin.html",
+        {
+            "companies":companies,
+        })
 
 @login_required()
 def designer_reviewer_view(request):
     """ Vista para atender la petición de la url / """
+    if request.method == "POST":
+        comments_new = request.POST["comments"]
+        print(comments_new)
     return render (request, "mdesigner/designerrev.html")
 
 @login_required()
 def designer_admin_view(request):
     """ Vista para atender la petición de la url / """
     return render (request, "mdesigner/designeradmin.html")
+
+@login_required()
+def profile_view(request):
+    """ Vista para atender la petición de la url / """
+    return render (request, "mdesigner/profile.html")
