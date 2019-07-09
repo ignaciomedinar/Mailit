@@ -63,13 +63,13 @@ nav{
     background-color: #212121;
 
 
-  
+
     /* flex-basis: 30px; */
     padding: 0px;
     width: max-content;
     display: flex;
     flex-direction: column;
-    
+
     /* padding-right: 15px; */
 }
 
@@ -113,7 +113,7 @@ body .superWrapper .left-menu h3 span {
 body .superWrapper .left-menu h3 {
         margin: 0px;
       }
-      
+
 
 
 .right-menu{
@@ -124,7 +124,7 @@ body .superWrapper .left-menu h3 {
     overflow-y: scroll;
     overflow-x: hidden;
     height: 100vh;
-    
+
     right: 0px;
 
 
@@ -309,7 +309,7 @@ body .superWrapper .left-menu h3 {
 }
 
 .tituloModules{
-  margin: 0px 0 0 14px; 
+  margin: 0px 0 0 14px;
 }
 
 .design{
@@ -359,4 +359,10 @@ h6{
     height: 50vh;
     width: 333px;
     background-color: #ffffffe8;
+}
+
+
+
+.displayNone{
+  display: none;
 }

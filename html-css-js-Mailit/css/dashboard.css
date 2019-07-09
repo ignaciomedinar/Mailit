@@ -16,6 +16,11 @@ body{
 }
 
 
+.displayNone{
+  display: none;
+}
+
+
 .mailsGrid{
   /* max-width: 620px;
 min-width: 310px; */
