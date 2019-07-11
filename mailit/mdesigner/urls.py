@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .models import Proyecto
 
 urlpatterns = [
   path('', views.index, name='index'),
@@ -14,4 +15,5 @@ urlpatterns = [
   path("designerrev/",views.designer_reviewer_view, name="designer_reviewer_view"),
   path("designeradmin/",views.designer_admin_view, name="designer_admin_view"),
   path("profile/",views.profile_view, name="profile_view"),
+  path("designer/<slug: nombreProyecto>/" ,views.profile_view, name="designer_view" ),
 ]

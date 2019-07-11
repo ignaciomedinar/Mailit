@@ -17,7 +17,7 @@
       <section id="leftMenu" class="left-menu">
 
         <div id="credenciales">
-          <h3><img id="avatar" src="/static/mdesigner/images/Nacho.jpg" alt="User" class="rounded-circle"> </h3>
+          <a href="/profile/"><h3><img id="avatar" src="/media/{{usuario.profile_image}}" alt="User" class="rounded-circle"> </h3></a>
           <a  href="#" id="hamburguer" class='haMenu'>
             <img width="30" src="/static/mdesigner/images/hamburgesa.svg" />
           </a>
@@ -27,10 +27,11 @@
         <div id="informacion">
 
           <h4>Projects</h4>
-          <h5>Project 1</h5>
-          <h5>Project 2</h5>
-          <h5>Project 3</h5>
-          {% if tipoUsuarios == "R" %}
+          {% for p in proyectos %}
+          <a href="/designer/"><h5>{{p}}</h5></a>
+          {% endfor %}
+
+          {% if grupon == "Reviewer" %}
           <a href="/dashboardrev/">Más Proyectos</a>
           {% else  %}
           <a href="/dashboard/">Más Proyectos</a>

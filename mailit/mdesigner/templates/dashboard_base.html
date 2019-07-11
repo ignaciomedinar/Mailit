@@ -18,7 +18,7 @@
       <section id="leftMenu" class="left-menu" style="width: 60px;">
 
         <div id="credenciales">
-          <h3><img id="avatar" src="/media/{{usuario.profile_image}}" alt="User" class="rounded-circle"> </h3>
+          <a href="/profile/"><h3><img id="avatar" src="/media/{{usuario.profile_image}}" alt="User" class="rounded-circle"> </h3></a>
           <a  href="#" id="hamburguer" class='haMenu'>
             <img width="30" src="/static/mdesigner/images/hamburgesa.svg" />
           </a>
@@ -28,9 +28,9 @@
         <div id="informacion">
 
           <h4>Projects</h4>
-          <h5>Project 1</h5>
-          <h5>Project 2</h5>
-          <h5>Project 3</h5>
+          {% for p in proyectos %}
+          <a href="/designer/"><h5>{{p}}</h5></a>
+          {% endfor %}
           <a href="/dashboard/">Más proyectos</a>
 
         </div>
@@ -46,18 +46,9 @@
             </section>
             {% endblock agregar %}
             <section id="board">
-
-              <div class="pastProjects"><div class="pProjets"></div><p>PROJECT NAME</p></div>
-              <div class="pastProjects"><div class="pProjets"></div><p>PROJECT NAME</p></div>
-              <div class="pastProjects gone"><div class="pProjets"></div><p>PROJECT NAME</p></div>
-              <div class="pastProjects gone"><div class="pProjets"></div><p>PROJECT NAME</p></div>
-              <div class="pastProjects gone"><div class="pProjets"></div><p>PROJECT NAME</p></div>
-              <div class="pastProjects gone"><div class="pProjets"></div><p>PROJECT NAME</p></div>
-              <div class="pastProjects gone"><div class="pProjets"></div><p>PROJECT NAME</p></div>
-              <div class="pastProjects gone"><div class="pProjets"></div><p>PROJECT NAME</p></div>
-              <div class="pastProjects gone"><div class="pProjets"></div><p>PROJECT NAME</p></div>
-              <div class="pastProjects gone"><div class="pProjets"></div><p>PROJECT NAME</p></div>
-              <div class="pastProjects gone"><div class="pProjets"></div><p>PROJECT NAME</p></div>
+              {% for p in proyectos2 %}
+              <a href="/designer/"><div class="pastProjects" href="/dashboard/{{p}}"><div class="pProjets"></div><p>{{p}}</p></div></a>
+              {% endfor %}
 
             </section>
 

@@ -36,7 +36,7 @@ class Usuario(models.Model):
     #username = models.CharField(max_length=40)
     #nombre = models.CharField(max_length=40,null=True, blank= True)
     #apellidos = models.CharField(max_length=80,null=True, blank= True)
-    profile_image = models.FileField(null=True, blank= True)
+    profile_image = models.FileField(null=True, blank= True, default='avatar.png')
     #password = models.CharField(max_length=50)
     #email = models.EmailField(max_length=100)
     #group = models.ForeignKey(Tipousuario,on_delete=models.CASCADE, related_name="grupo",default="D")
@@ -55,7 +55,7 @@ class Usuario(models.Model):
 class Proyecto(models.Model):
     """define la tabla proyecto"""
     ##usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
-    nombreProyecto = models.CharField(max_length=60)
+    nombreProyecto = models.CharField(max_length=60, unique=True)
     models.ManyToManyField(Usuario, related_name="username")
     #username = models.ForeignKey(Usuario,on_delete=models.CASCADE, related_name="user") #manytomany?
     fechaProyecto = models.DateField(auto_now_add=True)
@@ -63,7 +63,7 @@ class Proyecto(models.Model):
 
     def __str__(self):
         """se define la representacion en str para Proyecto"""
-        return str(self.id)
+        return "{}".format(self.nombreProyecto)
 
 class Assets(models.Model):
     assetName = models.CharField(max_length=40)

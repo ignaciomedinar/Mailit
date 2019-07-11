@@ -25,20 +25,22 @@ def login_user(request):
         username = request.POST["username"]
         password = request.POST["password"]
         user = User.objects.get(username=username)
-        grupo = user.groups
-        if grupo == "Designer":
+        grupo = user.groups.all()[0]
+        grupon = user.groups.all()[0].name
+        print("user : ",user)
+        print("grupo : ",grupo)
+        if grupo.name == "Designer":
             next = request.GET.get("next", "/dashboard/")
-        elif grupo == "Administrator":
+        elif grupo.name == "Administrator":
             next = request.GET.get("next","/dashboardadmin/")
             print("usuario: ", user)
-        elif grupo == "Reviewer":
+        elif grupo.name == "Reviewer":
             next = request.GET.get("next","/dashboardrev/")
         else:
             msg = "El usuario no existe"
-            print("No lee los grupos ",user.username)
-        print("user : ",user)
-        print("grupo : ",grupo)
-        print("usuarios: ",User.objects.all())
+            next = request.GET.get("next","/login/")
+            print("No lee los grupos ",grupo)
+
         acceso = authenticate(username=username, password=password)
         if acceso is not None:
             # Se agregan datos al request para mantener activa la sesión
@@ -124,9 +126,12 @@ def dashboard_view(request):
     """ Vista para atender la petición de la url / """
     #usuario=Usuario.objects.get(pk=request.user.id)
     usuario=Usuario.objects.get(userdj=request.user)
-    #print(usuarios)
+    proyectos = Proyecto.objects.all()[:5]
+    proyectos2 = Proyecto.objects.all()
     return render (request, "mdesigner/dashboard.html",{
         "usuario": usuario,
+        "proyectos": proyectos,
+        "proyectos2": proyectos2,
     })
 
 @login_required()
@@ -144,9 +149,19 @@ def project_new_view(request):
     return render(request, 'mdesigner/project_new.html')
 
 @login_required()
+#def designer_view(request, proyecto):
 def designer_view(request):
     """ Vista para atender la petición de la url / """
-    return render (request, "mdesigner/designer.html")
+    proyectos = Proyecto.objects.all()[:5]
+    usuario=Usuario.objects.get(userdj=request.user)
+    #grupo = usuario.groups.all()[0].name
+    #nombreProyecto=Proyecto.objects.get(nombreProyecto=proyecto)
+    return render (request, "mdesigner/designer.html",{
+        "proyectos": proyectos,
+        "usuario": usuario,
+        #"grupo": grupo,
+    })
+
 
 @login_required()
 def dashboard_reviewer_view(request):
@@ -174,13 +189,18 @@ def dashboard_admin_view(request):
         target4=request.POST["targetname4"]
         target5=request.POST["targetname5"]
         target6=request.POST["targetname6"]
+    elif 'Assign' in request.POST:
+        empresa = request.POST["company_assign"]
+        usuario = request.POST["user_assign"]
     else:
         print('no sirve')
     companies=Empresa.objects.all()
+    users=User.objects.all()
     print(companies)
     return render (request, "mdesigner/dashboardadmin.html",
         {
             "companies":companies,
+            "users":users,
         })
 
 @login_required()
