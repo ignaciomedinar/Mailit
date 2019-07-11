@@ -18,13 +18,14 @@ admin.site.register(Empresa, EmpresaAdmin)
 
 class UsuarioAdmin(admin.ModelAdmin):
     """se sobre escribe lo que hace __str__"""
-    list_display = ("id", "username", "nombre", "apellidos", "profile_image", "password", "email", "group", "company")#, "email")
+    list_display = ("id", "userdj", "profile_image", "company")
+    #list_display = ("id", "username", "nombre", "apellidos", "profile_image", "password", "email", "group", "company")#, "email")
 admin.site.register(Usuario, UsuarioAdmin)
 
 
 class ProyectoAdmin(admin.ModelAdmin):
     """se sobre escribe lo que hace __str__"""
-    list_display = ("id", "nombreProyecto", "username", "fechaProyecto")
+    list_display = ("id", "nombreProyecto", "fechaProyecto")
 admin.site.register(Proyecto, ProyectoAdmin)
 
 

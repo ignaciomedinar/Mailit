@@ -4,7 +4,7 @@
 
 {% block contenido %}
 <h4>First Timers</h4>
-<form id= "logForm" action="">
+<form id= "logForm" method="POST" enctype="multipart/form-data">
   <aside>
     {% csrf_token %}
     <input id="username_signup" type="text" name="username_signup" maxlength="20" placeholder="User Name" required>

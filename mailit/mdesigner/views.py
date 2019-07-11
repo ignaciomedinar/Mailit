@@ -2,7 +2,9 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from .models import Usuario, Tipousuario, Empresa
+from django.contrib.auth.hashers import make_password
+from django.contrib.auth.models import User, Group
+from .models import Usuario, Tipousuario, Empresa, Proyecto
 
 import datetime
 
@@ -22,8 +24,21 @@ def login_user(request):
         # Se obtienen los datos del formulario
         username = request.POST["username"]
         password = request.POST["password"]
-        next = request.GET.get("next", "/dashboard/")
-        print(username)
+        user = User.objects.get(username=username)
+        grupo = user.groups
+        if grupo == "Designer":
+            next = request.GET.get("next", "/dashboard/")
+        elif grupo == "Administrator":
+            next = request.GET.get("next","/dashboardadmin/")
+            print("usuario: ", user)
+        elif grupo == "Reviewer":
+            next = request.GET.get("next","/dashboardrev/")
+        else:
+            msg = "El usuario no existe"
+            print("No lee los grupos ",user.username)
+        print("user : ",user)
+        print("grupo : ",grupo)
+        print("usuarios: ",User.objects.all())
         acceso = authenticate(username=username, password=password)
         if acceso is not None:
             # Se agregan datos al request para mantener activa la sesión
@@ -54,22 +69,50 @@ def signup_user(request):
         username = request.POST["username_signup"]
         name = request.POST["name_signup"]
         lastname = request.POST["lastname_signup"]
-        username = request.POST["email_signup"]
+        email = request.POST["email_signup"]
         password = request.POST["password_signup"]
         password_confirmation = request.POST["password_confirmation"]
-        next = request.GET.get("next", "/")
-        acceso = authenticate(username=username, password=password)
-        if acceso is not None:
-            # Se agregan datos al request para mantener activa la sesión
-            login(request, acceso)
-            # Y redireccionamos a next
-            return redirect(next)
+        user_image = request.FILES.get("profile_image")
+        next = request.GET.get("next", "/dashboard/")
+        group=Group.objects.get(name="Designer")
+
+        if username and password and password_confirmation and email:
+            if password== password_confirmation:
+                if User.objects.filter(username=username).exists():
+                    msg = "El usuario ya existe"
+                else:
+                    user = User(
+                        username=username,
+                        first_name=name,
+                        last_name=lastname,
+                        password= make_password(password),
+                        email= email,
+                    )
+                    user.save()
+                    user.groups.add(group)
+                    if user_image:
+                        usuario = Usuario(userdj=user, profile_image=user_image)
+                    else:
+                        usuario = Usuario(userdj=user)
+                    usuario.save()
+                    acceso = authenticate(username=username, password=password)
+                    if acceso is not None:
+                        # Se agregan datos al request para mantener activa la sesión
+                        login(request, acceso)
+                        # Y redireccionamos a next
+                        return redirect(next)
+                    else:
+                        # Usuario malo
+                        msg = "Datos incorrectos, intente de nuevo!"
+            else:
+                msg="Contraseñas no coinciden!"
         else:
-            # Usuario malo
-            msg = "Datos incorrectos, intente de nuevo!"
+            msg="Datos incompletos!"
+
     else:
         # Si no hay datos POST
         msg = ""
+    print("mensaje ", msg)
     return render(request, "registration/signup.html",
         {
             "msg":msg,
@@ -79,10 +122,11 @@ def signup_user(request):
 @login_required()
 def dashboard_view(request):
     """ Vista para atender la petición de la url / """
-    #usuarios=Usuario.objects.get(id)
+    #usuario=Usuario.objects.get(pk=request.user.id)
+    usuario=Usuario.objects.get(userdj=request.user)
     #print(usuarios)
     return render (request, "mdesigner/dashboard.html",{
-        #"usuarios": usuarios,
+        "usuario": usuario,
     })
 
 @login_required()
@@ -90,8 +134,12 @@ def project_new_view(request):
     """ vista para project new"""
     if request.method == "POST":
         project_new = request.POST["nombreProyecto"]
-        # LNN_new = request.POST["LNN"]
-        print(project_new)
+        project= Proyecto(nombreProyecto=project_new)
+        project.save()
+        return redirect("/designer/")
+    else:
+        msn=""
+    #print(project_new)
 
     return render(request, 'mdesigner/project_new.html')
 
@@ -151,4 +199,43 @@ def designer_admin_view(request):
 @login_required()
 def profile_view(request):
     """ Vista para atender la petición de la url / """
+    if request.method=="POST":
+
+        name = request.POST["name_signup"]
+        lastname = request.POST["lastname_signup"]
+        email = request.POST["email_signup"]
+        password = request.POST["password_signup"]
+        password_confirmation = request.POST["password_confirmation"]
+        if not name:
+            name=user.username
+        if not lastname:
+            lastname=user.lastname
+        if not email:
+            email=user.email
+        user_image = request.FILES.get("profile_image")
+        next = request.GET.get("next", "/dashboard/")
+        if password== password_confirmation:
+            user = User(
+                username=username,
+                first_name=name,
+                last_name=lastname,
+                password= make_password(password),
+                email= email,
+            )
+            user.username.save()
+            user.groups.add(group)
+            if user_image:
+                usuario = Usuario(userdj=user, profile_image=user_image)
+            else:
+                usuario = Usuario(userdj=user)
+            usuario.save()
+
+            print(name, email)
+            #print(user)
+
+            return redirect(next)
+        else:
+            msg="Contraseñas no coinciden!"
+    else:
+        msg=""
     return render (request, "mdesigner/profile.html")

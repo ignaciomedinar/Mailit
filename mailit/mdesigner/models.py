@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 import os
 
 # Create your models here.
@@ -32,25 +33,31 @@ class Empresa(models.Model):
 
 class Usuario(models.Model):
     """Define la tabla tipo usuario"""
-    username = models.CharField(max_length=40)
-    nombre = models.CharField(max_length=40,null=True, blank= True)
-    apellidos = models.CharField(max_length=80,null=True, blank= True)
+    #username = models.CharField(max_length=40)
+    #nombre = models.CharField(max_length=40,null=True, blank= True)
+    #apellidos = models.CharField(max_length=80,null=True, blank= True)
     profile_image = models.FileField(null=True, blank= True)
-    password = models.CharField(max_length=50)
-    email = models.EmailField(max_length=100)
-    group = models.ForeignKey(Tipousuario,on_delete=models.CASCADE, related_name="grupo",default="D")
+    #password = models.CharField(max_length=50)
+    #email = models.EmailField(max_length=100)
+    #group = models.ForeignKey(Tipousuario,on_delete=models.CASCADE, related_name="grupo",default="D")
     company = models.ForeignKey(Empresa, on_delete=models.CASCADE, related_name="company",null=True, blank=True)
+    userdj = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        on_delete = models.CASCADE,
+    )
+
 
     def __str__(self):
         """ Se define la representación en str para Usuario """
-        return "{} {}".format(self.nombre, self.apellidos)
+        return "{}".format(self.userdj)
 
 
 class Proyecto(models.Model):
     """define la tabla proyecto"""
     ##usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     nombreProyecto = models.CharField(max_length=60)
-    username = models.ForeignKey(Usuario,on_delete=models.CASCADE, related_name="user") #manytomany?
+    models.ManyToManyField(Usuario, related_name="username")
+    #username = models.ForeignKey(Usuario,on_delete=models.CASCADE, related_name="user") #manytomany?
     fechaProyecto = models.DateField(auto_now_add=True)
 ##    fechaProyecto = models.DateField(auto_now_add=True)
 

@@ -3,17 +3,18 @@
 {% block title %} - Profile{% endblock %}
 
 {% block contenido %}
-<h4>First Timers</h4>
-<form id= "logForm" action="">
+<h4>{{ user.username }} Profile</h4>
+<form id= "logForm" method="POST">
   <aside>
     {% csrf_token %}
     <input id="name_signup" type="text" name="name_signup" maxlength="20" placeholder="Name" />
     <input id="lastname_signup" type="text" name="lastname_signup" maxlength="20" placeholder="Last Names"/>
+    <input id="email_signup" type="email" name="email_signup" maxlength="30" placeholder="E-mail">
     <input id="password_signup" type="password" name="password_signup" maxlength="30" placeholder="Password" />
     <input id="password_confirmation" type="password" name="password_confirmation" maxlength="30" placeholder="Repeat Password" />
     <p>Select profile picture</p>
     <input id="profile_image" type="file" alt="Submit" name="profile_image"/>
-    <input type="submit" name="submit" class="bSign" value="Sign up"/>
+    <input type="submit" name="submit" class="bSign" value="Update"/>
   </aside>
   {% if next %}
   <input type="hidden" name="next" value="{{ next }}" />

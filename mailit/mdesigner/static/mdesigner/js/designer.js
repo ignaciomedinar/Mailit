@@ -88,7 +88,7 @@ function loadTheHTML(){
                       <tr>
                         <td class="bp-logo" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 60px;" width="60">
                           <a href="http://www.americanexpress.com/australia" target="_blank" style="font-family: HelveticaNeue, Helvetica Neue, Helvetica, Arial, sans-serif;">
-                            <img src="../static/images/AMXIMG_250x250_amex_logo.jpg" alt="AMERICAN EXPRESS" title="American Express Logo"
+                            <img src="/static/mdesigner/images/AMXIMG_250x250_amex_logo.jpg" alt="AMERICAN EXPRESS" title="American Express Logo"
                               height="auto" style="-ms-interpolation-mode: bicubic; border: 0 none; color: #333333; display: block; font-family: sans-serif; font-size: 10px; height: auto; line-height: 100%; outline: none; text-decoration: none; width: 60px;"
                               width="60">
                           </a>
@@ -97,7 +97,7 @@ function loadTheHTML(){
 
                         <td class="bp-tagline" width="65" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                           <a href="#LINK_TO" target="_blank" style="font-family: HelveticaNeue, Helvetica Neue, Helvetica, Arial, sans-serif;">
-                            <img src="../static/images/DLLWI.gif" alt="Don't live life without it" title="Don't live life without it" height="auto"
+                            <img src="/static/mdesigner/images/DLLWI.gif" alt="Don't live life without it" title="Don't live life without it" height="auto"
                               style="-ms-interpolation-mode: bicubic; border: 0 none; color: #333333; display: block; font-family: sans-serif; font-size: 12px; height: auto; line-height: 100%; outline: none; text-decoration: none; width: 65px;"
                               width="65">
                           </a>
@@ -372,7 +372,7 @@ function loadTheHeroOne(){
                             <tbody>
                               <tr>
                                 <td style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 414px;">
-                                  <img src="../static/images/AMXIMG_414x320_placeholder.png" alt="" title="" height="320" style="-ms-interpolation-mode: bicubic; border: 0 none; display: block; height: 320px; line-height: 100%; outline: none; text-decoration: none; width: 414px;"
+                                  <img src="/static/mdesigner/images/AMXIMG_414x320_placeholder.png" alt="" title="" height="320" style="-ms-interpolation-mode: bicubic; border: 0 none; display: block; height: 320px; line-height: 100%; outline: none; text-decoration: none; width: 414px;"
                                     width="414">
                                 </td>
                               </tr>
