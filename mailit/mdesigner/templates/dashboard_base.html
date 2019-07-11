@@ -6,6 +6,7 @@
       <link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet">
       <link rel="stylesheet" href="/static/mdesigner/css/main_designer.css">
       <link rel="stylesheet" href="/static/mdesigner/css/dashboard.css">
+      <link rel="stylesheet" href="/static/mdesigner/css/logIn.css">
       <title>Dashboard{% block title %}{% endblock %}</title>
   </head>
 
@@ -18,7 +19,7 @@
       <section id="leftMenu" class="left-menu" style="width: 60px;">
 
         <div id="credenciales">
-          <a href="/profile/"><h3><img id="avatar" src="/media/{{usuario.profile_image}}" alt="User" class="rounded-circle"> </h3></a>
+          <a href="/profile/"><h3><img id="avatar" src="/media/{{usuario.profile_image}}" alt="" class="rounded-circle"> </h3></a>
           <a  href="#" id="hamburguer" class='haMenu'>
             <img width="30" src="/static/mdesigner/images/hamburgesa.svg" />
           </a>
@@ -29,7 +30,7 @@
 
           <h4>Projects</h4>
           {% for p in proyectos %}
-          <a href="/designer/"><h5>{{p}}</h5></a>
+          <a href="/designer/{{p}}/"><h5>{{p}}</h5></a>
           {% endfor %}
           <a href="/dashboard/">Más proyectos</a>
 
@@ -47,7 +48,7 @@
             {% endblock agregar %}
             <section id="board">
               {% for p in proyectos2 %}
-              <a href="/designer/"><div class="pastProjects" href="/dashboard/{{p}}"><div class="pProjets"></div><p>{{p}}</p></div></a>
+              <a href="/designer/{{p}}/"><div class="pastProjects"><div class="pProjets"></div><p>{{p}}</p></div></a>
               {% endfor %}
 
             </section>
@@ -184,8 +185,9 @@
       <script src="/static/mdesigner/js/TweenJS-1.0.0/lib/tweenjs.js"></script>
       <script src="/static/mdesigner/js/TweenJS-1.0.0/src/tweenjs/plugins/CSSPlugin.js"></script>
 
+      {% block js %}
       <script src="/static/mdesigner/js/designer.js"></script>
-
+      {% endblock js %}
 
   </body>
 </html>

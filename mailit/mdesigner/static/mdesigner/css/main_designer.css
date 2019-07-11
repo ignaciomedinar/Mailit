@@ -59,18 +59,13 @@ nav{
 
 }
  .left-menu{
-   width:45px;
-    background-color: #212121;
-
-
-
-    /* flex-basis: 30px; */
-    padding: 0px;
-    width: max-content;
-    display: flex;
-    flex-direction: column;
-
-    /* padding-right: 15px; */
+  min-width: 50px !important;
+  width:45px;
+  background-color: #212121;
+  padding: 0px;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
 }
 
 #credenciales{
@@ -163,8 +158,9 @@ body .superWrapper .left-menu h3 {
     position: absolute;
     top: 4px;
 }
-.right-item select
-{
+
+
+.right-item select{
   background-color: #757575;
   border:0px;
   font-size: 13px;
@@ -353,10 +349,10 @@ h6{
 
 #editor{
   right: 0;
-    bottom: 0;
-    position: fixed;
-    z-index: 2;
-    height: 50vh;
-    width: 333px;
-    background-color: #ffffffe8;
+  bottom: 0;
+  position: fixed;
+  z-index: 2;
+  height: 50vh;
+  width: 333px;
+  background-color: #ffffffe8;
 }

@@ -4,18 +4,19 @@
 
 {% block contenido %}
 <h4>First Timers</h4>
-<form id= "logForm" method="POST" enctype="multipart/form-data">
+<form autocomplete="off" id="logForm" method="POST" enctype="multipart/form-data">
   <aside>
     {% csrf_token %}
-    <input id="username_signup" type="text" name="username_signup" maxlength="20" placeholder="User Name" required>
-    <input id="name_signup" type="text" name="name_signup" maxlength="20" placeholder="Name" required>
-    <input id="lastname_signup" type="text" name="lastname_signup" maxlength="20" placeholder="Last Names" required>
-    <input id="email_signup" type="email" name="email_signup" maxlength="30" placeholder="E-mail" required>
-    <p href="profile_image">Select profile picture</p>
-    <input id="profile_image" type="file" alt="Submit" name="profile_image"/>
-    <input id="password_signup" type="password" name="password_signup" maxlength="30" placeholder="Password" required>
-    <input id="password_confirmation" type="password" name="password_confirmation" maxlength="30" placeholder="Repeat Password" required>
-    <input type="submit" name="submit" class="bSign" value="Sign up"/>
+    <input class="campoTop" autocomplete="off" name="hidden" type="text" style="display:none;">
+    <input autocomplete="off" class="campoTop" id="username_signup" type="text" name="username_signup" maxlength="20" placeholder="User Name" required>
+    <input autocomplete="off" class="campoTop" id="name_signup" type="text" name="name_signup" maxlength="20" placeholder="Name" required>
+    <input class="campoTop" id="lastname_signup" type="text" name="lastname_signup" maxlength="20" placeholder="Last Names" required>
+    <input class="campoTop" id="email_signup" type="email" name="email_signup" maxlength="30" placeholder="E-mail" required>
+    <p class="titleProfilePicture" href="profile_image">Select profile picture</p>
+    <input class="campoTop" id="profile_image" type="file" alt="Submit" name="profile_image"  style="color:azure;"/>
+    <input class="campoTop" id="password_signup" type="password" name="password_signup" maxlength="30" placeholder="Password" required>
+    <input class="campoTop" id="password_confirmation" type="password" name="password_confirmation" maxlength="30" placeholder="Repeat Password" required>
+    <input class="bSign btnForm btnEnviar" type="submit" name="submit" class="bSign" value="Sign up"/>
   </aside>
   {% if next %}
   <input type="hidden" name="next" value="{{ next }}" />

@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="the mail makers" />
     <meta name="keywords" content="e-mail-marketing" />
-    <meta name="author" content="@kukulakcero, kukulak@kukulakcero.com" />
+    <meta name="author" content=" valderrama.christian@gmail.com, ignaciomedinar@gmail.com" />
 
     <link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet">
 
@@ -17,26 +17,27 @@
   </head>
 
 
-<body>
-  <section class="portada">
-    <section class="tarjetaLogIn">
-      <div class="logo">
-        <div class="theSpace">
+  <body>
+    <section class="portada">
+      <section class="tarjetaLogIn">
+
+        <div class="logo">
+          <div class="theSpace">
+          </div>
+          <h1 id= "tituLogo">MAIL_it</h1>
+          <h6>smart mail design</h6>
         </div>
-        <h1 id= "tituLogo">MAIL_it</h1>
-        <h6>smart mail design</h6>
-      </div>
 
-      <div class="logIn">
-        {% block contenido %}
-        <a href="/login/">Log In<br></a>
-        <a href="/signup/">First Timers</a>
-        {% endblock %}
+        <div class="logIn">
+          {% block contenido %}
+          <a id="btnLogIn" class="btnForm" href="/login/">Log In</a>
+          <br />
+          <a  id="btnFirst" class="btnForm" href="/signup/">First Timers</a>
+          {% endblock %}
+        </div>
 
+      </section>
     </section>
-
-    </section>
-
   </body>
 
 </html>

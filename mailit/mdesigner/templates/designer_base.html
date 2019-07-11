@@ -17,7 +17,7 @@
       <section id="leftMenu" class="left-menu">
 
         <div id="credenciales">
-          <a href="/profile/"><h3><img id="avatar" src="/media/{{usuario.profile_image}}" alt="User" class="rounded-circle"> </h3></a>
+          <a href="/profile/"><h3><img id="avatar" src="/media/{{usuario.profile_image}}" alt="" class="rounded-circle"> </h3></a>
           <a  href="#" id="hamburguer" class='haMenu'>
             <img width="30" src="/static/mdesigner/images/hamburgesa.svg" />
           </a>
@@ -28,7 +28,7 @@
 
           <h4>Projects</h4>
           {% for p in proyectos %}
-          <a href="/designer/"><h5>{{p}}</h5></a>
+          <a href="/designer/{{p}}/"><h5>{{p}}</h5></a>
           {% endfor %}
 
           {% if grupon == "Reviewer" %}
@@ -43,7 +43,7 @@
 
       <section class="design">
 
-        <p id="projectName">Project: {{project.projectName}}</p>
+        <p id="projectName">Project: <b>{{proy}}</p>
 
           <div id= "mailCanvas" class="toCanvas">
 
@@ -62,7 +62,7 @@
 
         <div id= "allModules">
           {% block cont %}
-            <div id="headers" class="fatherModules">
+            <div id="headers" class="fatherModules" style="display: none;">
 
               <a id= "bHeader" class="btnHand"> Header</a>
               <div id="dropDown" class="dropdown">
@@ -81,6 +81,7 @@
 
             <div id= "dropdownHero" class="dropdownHero">
                   <div id="heroOne" class="moduleItem heroBanner"><a ><img src="/static/mdesigner/images/img-350x350.gif" alt=""> </a></div>
+                  <div id="heroOne2" class="moduleItem heroBanner"><a ><img src="/static/mdesigner/images/img-350x350.gif" alt=""> </a></div>
                   <div class="moduleItem heroBanner"><a href=""><img src="/static/mdesigner/images/img-350x350.gif" alt=""> </a></div>
                   <div class="moduleItem heroBanner"><a href=""><img src="/static/mdesigner/images/img-350x350.gif" alt=""> </a></div>
                   <div class="moduleItem heroBanner"><a href=""><img src="/static/mdesigner/images/img-350x350.gif" alt=""> </a></div>
@@ -88,7 +89,7 @@
                   <div class="moduleItem heroBanner"><a href=""><img src="/static/mdesigner/images/img-350x350.gif" alt=""> </a></div>
                   <div class="moduleItem heroBanner"><a href=""><img src="/static/mdesigner/images/img-350x350.gif" alt=""> </a></div>
                   <div class="moduleItem heroBanner"><a href=""><img src="/static/mdesigner/images/img-350x350.gif" alt=""> </a></div>
-                  <div class="moduleItem heroBanner"><a href=""><img src="/static/mdesigner/images/img-350x350.gif" alt=""> </a></div>
+                  <!-- <div class="moduleItem heroBanner"><a href=""><img src="/static/mdesigner/images/img-350x350.gif" alt=""> </a></div> -->
             </div>
 
           </div>
@@ -97,13 +98,13 @@
 
             <a id="bText" class="btnHand">Text Modules</a>
                 <div id="dropdownText" class="dropdownText">
-                  <div class="moduleItem textModule"><a href=""><img src="/static/mdesigner/images/img-350x350.gif" alt=""> </a></div>
+                  <div id="textOne" class="moduleItem heroBanner"><a ><img src="/static/mdesigner/images/img-350x350.gif" alt=""> </a></div>
                   <div class="moduleItem textModule"><a href=""><img src="/static/mdesigner/images/img-350x350.gif" alt=""> </a></div>
                   <div class="moduleItem textModule"><a href=""><img src="/static/mdesigner/images/img-350x350.gif" alt=""> </a></div>
                   <div class="moduleItem textModule"><a href=""><img src="/static/mdesigner/images/img-350x350.gif" alt=""> </a></div>
                   <div class="moduleItem textModule"><a href=""><img src="/static/mdesigner/images/img-350x350.gif" alt=""> </a></div>
                   <div class="moduleItem heroBanner"><a href=""><img src="/static/mdesigner/images/img-350x350.gif" alt=""> </a></div>
-                  <div class="moduleItem heroBanner"><a href=""><img src="/static/mdesigner/images/img-350x350.gif" alt=""> </a></div>
+                  <!-- <div class="moduleItem heroBanner"><a href=""><img src="/static/mdesigner/images/img-350x350.gif" alt=""> </a></div> -->
                 </div>
           </div>
 
@@ -129,7 +130,7 @@
 
           </div>
 
-            <div id="extraModules" class="fatherModules">
+            <div id="extraModules" class="fatherModules" style="display: none;">
 
               <a id="bExtra" class="btnHand">Extra Modules</a>
               <div id="dropdownExtra" class="dropdownExtra">
@@ -141,7 +142,7 @@
             </div>
           </div>
 
-          <div id="footers" class="fatherModules">
+          <div id="footers" class="fatherModules" style="display: none;">
 
             <a id="bFooter" class="btnHand">Footer</a>
             <div id="dropdownFooter" class="dropdownFooter">
@@ -154,7 +155,7 @@
             </div>
           </div>
 
-          <div id="widgets" class="fatherModules">
+          <div id="widgets" class="fatherModules" style="display: none;">
 
             <a id="bWidget" class="btnHand">Widget</a>
             <div id="dropdownWidget" class="dropdownWidget">

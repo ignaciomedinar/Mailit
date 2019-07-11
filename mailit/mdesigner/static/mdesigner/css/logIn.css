@@ -17,6 +17,43 @@ body{
 }
 
 
+.portadaAdmin{
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  margin: 0 auto;
+
+}
+
+.tarjetaLogInAdmin{
+  position: relative;
+  padding: 30px;
+  max-width: 500px;
+  width: 500px;
+  background: #404040;
+  margin: 10% auto;
+}
+
+.goDashboard{
+  height: 22px;
+  background: #df6811;
+  text-decoration: none;
+  padding: 8px;
+  margin: 20px 10px;
+  color: #ffffff;
+}
+
+.btnForm{
+  background: #df6811;
+  width: 60%;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+  margin: 30px auto 0px;
+  border: none;
+  }
+
 
 .logo{
 
@@ -51,18 +88,40 @@ body{
 
 #logForm{
   height: fit-content;
-  background-color: darkseagreen;
-  
 }
+
+
+
+.formularioLogIn{
+  display: block;
+  padding: 8px 15px;
+  width: 95%;
+}
+
+
+#username{
+
+  margin: 26px auto;
+
+}
+
+#username:-internal-autofill-selected{
+  background-color: red;
+}
+
+.btnEnviar{
+    display: block;
+}
+
+
+
+
 
 
 .firstTimers{
   margin-top: 20px;
   display: grid;
   width: 100%;
-
-
-
 }
 
 
@@ -72,7 +131,7 @@ body{
 }
 
 .logIn{
-  
+
   width: 100%;
   height: fit-content;
   margin: 0px auto;
@@ -99,7 +158,7 @@ input:-internal-autofill-selected {
 
 
 input[type=password]{
-width: 100%;
+width: 90%;
 margin: 0px auto;
 display: block;
 height: 30px;
@@ -112,7 +171,7 @@ color: #ffffff;
 
 
 input[type=text]{
-  width: 100%;
+  width: 90%;
   margin: 0px auto;
   display: block;
   height: 30px;
@@ -120,6 +179,25 @@ input[type=text]{
   background-color: #4a4a4a;
   border: none;
   color: #ffffff;
+  }
+
+
+  input[type=email]{
+    width: 90%;
+    margin: 0px auto;
+    display: block;
+    height: 30px;
+    text-align: center;
+    background-color: #4a4a4a;
+    border: none;
+    color: #ffffff;
+    }
+
+
+  .titleProfilePicture{
+    text-align: center;
+    color: white;
+    margin-top: 30px;
   }
 
 
@@ -165,6 +243,7 @@ input:focus{
   text-align: left;
   color: #909090;
   font-size: 0.6em;
+  text-decoration: none;
 }
 
 .go{
@@ -178,8 +257,12 @@ input:focus{
 .tarjetaLogIn{
   position: relative;
   padding: 30px;
-  top: 100px;
-  left: 40%;
-  width: 220px;
+  width: 270px;
   background: #404040;
+  margin: 7% auto;
+}
+
+
+.campoTop{
+  margin: 10px !important;
 }

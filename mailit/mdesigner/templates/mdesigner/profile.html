@@ -7,12 +7,14 @@
 <form id= "logForm" method="POST">
   <aside>
     {% csrf_token %}
+    <img src="/media/{{usuario.profile_image}}" height="50px" align="middle" style="display:block;margin-left: auto;
+      margin-right: auto;idth: 50%;"/>
     <input id="name_signup" type="text" name="name_signup" maxlength="20" placeholder="Name" />
     <input id="lastname_signup" type="text" name="lastname_signup" maxlength="20" placeholder="Last Names"/>
     <input id="email_signup" type="email" name="email_signup" maxlength="30" placeholder="E-mail">
     <input id="password_signup" type="password" name="password_signup" maxlength="30" placeholder="Password" />
     <input id="password_confirmation" type="password" name="password_confirmation" maxlength="30" placeholder="Repeat Password" />
-    <p>Select profile picture</p>
+    <p class="logIn">Select profile picture</p>
     <input id="profile_image" type="file" alt="Submit" name="profile_image"/>
     <input type="submit" name="submit" class="bSign" value="Update"/>
   </aside>

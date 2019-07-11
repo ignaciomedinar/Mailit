@@ -64,7 +64,7 @@ def login_user(request):
 
 def signup_user(request):
     """ Atiende las peticiones de GET /login/ """
-
+    fl=0
     # Si hay datos vía POST se procesan
     if request.method == "POST":
         # Se obtienen los datos del formulario
@@ -77,6 +77,7 @@ def signup_user(request):
         user_image = request.FILES.get("profile_image")
         next = request.GET.get("next", "/dashboard/")
         group=Group.objects.get(name="Designer")
+
 
         if username and password and password_confirmation and email:
             if password== password_confirmation:
@@ -101,11 +102,13 @@ def signup_user(request):
                     if acceso is not None:
                         # Se agregan datos al request para mantener activa la sesión
                         login(request, acceso)
+                        fl= 0
                         # Y redireccionamos a next
                         return redirect(next)
                     else:
                         # Usuario malo
                         msg = "Datos incorrectos, intente de nuevo!"
+                        fl = 1
             else:
                 msg="Contraseñas no coinciden!"
         else:
@@ -113,7 +116,8 @@ def signup_user(request):
 
     else:
         # Si no hay datos POST
-        msg = ""
+        if fl==0:
+            msg = ""
     print("mensaje ", msg)
     return render(request, "registration/signup.html",
         {
@@ -139,26 +143,34 @@ def project_new_view(request):
     """ vista para project new"""
     if request.method == "POST":
         project_new = request.POST["nombreProyecto"]
-        project= Proyecto(nombreProyecto=project_new)
-        project.save()
-        return redirect("/designer/")
+        next = request.GET.get("next", "/designer/" + project_new)
+        if Proyecto.objects.filter(nombreProyecto=project_new).exists():
+            msg="El proyecto ya existe, elige otro nombre"
+            print("M1", msg)
+        else:
+            project= Proyecto(nombreProyecto=project_new)
+            project.save()
+            return redirect(next)
     else:
-        msn=""
-    #print(project_new)
-
-    return render(request, 'mdesigner/project_new.html')
+        msg=""
+    print("M2", msg)
+    return render(request, 'mdesigner/project_new.html',
+        {
+            "msg": msg,
+        })
 
 @login_required()
 #def designer_view(request, proyecto):
-def designer_view(request):
+def designer_view(request, proyecto):
     """ Vista para atender la petición de la url / """
     proyectos = Proyecto.objects.all()[:5]
     usuario=Usuario.objects.get(userdj=request.user)
     #grupo = usuario.groups.all()[0].name
-    #nombreProyecto=Proyecto.objects.get(nombreProyecto=proyecto)
+    proy=Proyecto.objects.get(nombreProyecto=proyecto)
     return render (request, "mdesigner/designer.html",{
         "proyectos": proyectos,
         "usuario": usuario,
+        "proy": proy,
         #"grupo": grupo,
     })
 
@@ -219,6 +231,7 @@ def designer_admin_view(request):
 @login_required()
 def profile_view(request):
     """ Vista para atender la petición de la url / """
+    usuario=Usuario.objects.get(userdj=request.user)
     if request.method=="POST":
 
         name = request.POST["name_signup"]
@@ -226,6 +239,7 @@ def profile_view(request):
         email = request.POST["email_signup"]
         password = request.POST["password_signup"]
         password_confirmation = request.POST["password_confirmation"]
+
         if not name:
             name=user.username
         if not lastname:
@@ -258,4 +272,7 @@ def profile_view(request):
             msg="Contraseñas no coinciden!"
     else:
         msg=""
-    return render (request, "mdesigner/profile.html")
+    return render (request, "mdesigner/profile.html",
+    {
+        "usuario": usuario,
+    })

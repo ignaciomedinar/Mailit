@@ -2,8 +2,6 @@ createjs.CSSPlugin.install();
 const mailCanvas = document.getElementById("mailCanvas");
 const moduleOne = document.getElementById("moduleOne");
 const heroOne = document.getElementById("heroOne");
-const heroOne2 = document.getElementById("heroOne2");
-// const textOne = document.getElementById("textOne");
 
 const mLeft = document.getElementById("leftMenu");
 const informacion =document.getElementById("informacion")
@@ -39,13 +37,13 @@ const headers = document.getElementById("headers");
 let buttonStates = 0;
 
 
-dropDown.style.display = "none";
-dropdownHero.style.display = "none";
-dropdownText.style.display = "none";
-dropdownImage.style.display = "none";
-dropdownExtra.style.display = "none";
-dropdownFooter.style.display = "none";
-dropdownWidget.style.display = "none";
+// dropDown.style.display = "none";
+// dropdownHero.style.display = "none";
+// dropdownText.style.display = "none";
+// dropdownImage.style.display = "none";
+// dropdownExtra.style.display = "none";
+// dropdownFooter.style.display = "none";
+// dropdownWidget.style.display = "none";
 
 
 function theButton(theTarget){
@@ -95,7 +93,7 @@ function loadTheHTML(){
                               width="60">
                           </a>
                         </td>
-                        <td width="12" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> </td>
+                        <td width="12" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> </td>
 
                         <td class="bp-tagline" width="65" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                           <a href="#LINK_TO" target="_blank" style="font-family: HelveticaNeue, Helvetica Neue, Helvetica, Arial, sans-serif;">
@@ -105,7 +103,7 @@ function loadTheHTML(){
                           </a>
                         </td>
 
-                        <td style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> </td>
+                        <td style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> </td>
                       </tr>
                     </tbody>
                   </table>
@@ -200,23 +198,23 @@ var defaultColor = "#000000";
 window.addEventListener("load", startup, false);
 
 function startup() {
-    colorin = document.querySelector("#colorin");
-    colorin.value = defaultColor;
-    colorin.addEventListener("input", updateFirst, false);
-    colorin.addEventListener("change", updateAll, false);
-    colorin.select();
+    // colorin = document.querySelector("#colorin");
+    // colorin.value = defaultColor;
+    // colorin.addEventListener("input", updateFirst, false);
+    // colorin.addEventListener("change", updateAll, false);
+    // colorin.select();
 
-    txtTi = document.querySelector("#colorin");
-    txtTi.value = defaultColor;
-    txtTi.addEventListener("input", updateFirst, false);
-    txtTi.addEventListener("change", updateAll, false);
-    txtTi.select();
+    // txtTi = document.querySelector("#colorin");
+    // txtTi.value = defaultColor;
+    // txtTi.addEventListener("input", updateFirst, false);
+    // txtTi.addEventListener("change", updateAll, false);
+    // txtTi.select();
 
-    txtCu = document.querySelector("#colorin");
-    txtCu.value = defaultColor;
-    txtCu.addEventListener("input", updateFirst, false);
-    txtCu.addEventListener("change", updateAll, false);
-    txtCu.select();
+    // txtCu = document.querySelector("#colorin");
+    // txtCu.value = defaultColor;
+    // txtCu.addEventListener("input", updateFirst, false);
+    // txtCu.addEventListener("change", updateAll, false);
+    // txtCu.select();
   }
 
 
@@ -287,6 +285,8 @@ function loadTheHeroOne(){
 
     mailCanvas.innerHTML +=
     `
+
+
 
     <!-- START: HB01 Block Left -->
 <!--[if mso | IE]>
@@ -405,243 +405,18 @@ function loadTheHeroOne(){
     `
 }
 
-function loadTheHeroOne2(){
 
-    mailCanvas.innerHTML +=
-`
-<!-- START: HB02 Block Right -->
-<!--[if mso | IE]>
-<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="620" align="center" style="width:620px;">
-<tr>
-<td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
-<![endif]-->
-<div style="background: #A7A8AA; margin: 0px auto; max-width: 620px;">
-  <table role="presentation" cellpadding="0" cellspacing="0" style="border-collapse: collapse; font-size: 0px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;"
-    align="center" border="0" bgcolor="#A7A8AA">
-    <tbody>
-      <tr>
-        <td dir="rtl" style="border-collapse: collapse; direction: rtl; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" align="left"
-          valign="middle">
-          <table role="presentation" cellpadding="0" cellspacing="0" style="border-collapse: collapse; font-size: 0px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;"
-            align="center" border="0">
-            <tbody>
-              <tr>
-                <th class="hb-full hb-reset" width="206" height="320" style="direction: ltr; font-weight: normal; height: 320px; width: 206px;"
-                  align="center" bgcolor="#999999" valign="middle">
-                  <table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-                    <tr>
-                      <td style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-left: 20px; padding-right: 20px;"
-                        class="hb-reset-text">
-                        <table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-                          <tbody>
-
-                            <tr>
-                              <td align="center" style="border-collapse: collapse; color: #FFFFFF; cursor: auto; font-family: HelveticaNeue, Helvetica Neue Regular, Helvetica, Arial, sans-serif; font-size: 20px; line-height: 28px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;"
-                               >
-                                <p style="display: block; margin: 0;">Ut enim ad minima</p>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td align="center" style="border-collapse: collapse; color: #FFFFFF; cursor: auto; font-family: HelveticaNeue, Helvetica Neue Regular, Helvetica, Arial, sans-serif; font-size: 15px; line-height: 22px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-top: 8px; word-break: break-word;"
-                               >
-                                <p style="display: block; margin: 0;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rutrum enim eget magna.</p>
-                              </td>
-                            </tr>
-
-                            <tr>
-                              <td align="center" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-top: 20px;">
-                                <table width="164" height="38" cellpadding="0" cellspacing="0" border="0" align="center" style="border-collapse: collapse; border-radius: 3px; mso-hide: all; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"
-                                  class="hb-hero-button">
-                                  <tr>
-                                    <td align="center" valign="middle" height="38" style="border-collapse: collapse; border-radius: 3px; color: #333333; font-family: HelveticaNeue, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 15px; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"
-                                      bgcolor="#ffffff">
-                                      <a href="#LINK_TO" class="hb-hero-button" target="_blank" style="border-radius: 3px; color: #333333; display: inline-block; font-family: HelveticaNeue, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: normal; line-height: 22px; padding: 8px 0px; text-decoration: none; text-transform: none; width: 164px;">Find out more</a>
-                                    </td>
-                                  </tr>
-                                </table>
-                                <!--[if mso]>
-                                  <table border="0" cellspacing="0" cellpadding="0" align="center" style="display: none; mso-hide: none!important;">
-                                    <tr>
-                                      <td>
-                                        <table width="164" height="38" cellpadding="0" cellspacing="0" border="0" style="border-radius:3px;">
-                                          <tr>
-                                            <td align="center" valign="middle" width="164" height="38" style="background-color: #ffffff;font-family:HelveticaNeue, Helvetica Neue, Helvetica, Arial, sans-serif; font-size:15px;border-radius:3px;">
-                                              <a href="#LINK_TO" target="_blank" style="color: #333333;font-family:HelveticaNeue, Helvetica Neue, Helvetica, Arial, sans-serif; display: inline-block; text-decoration: none; padding:8px 0px 8px 0px;line-height:22px; width:164px;font-weight:normal;text-transform:none;">Find out more</a>
-                                            </td>
-                                          </tr>
-                                        </table>
-                                      </td>
-                                    </tr>
-                                  </table>
-                                <![endif]-->
-                              </td>
-                            </tr>
-
-                          </tbody>
-                        </table>
-                      </td>
-                    </tr>
-                  </table>
-                </th>
-
-                <th class="hb-full" width="414" style="direction: ltr; font-size: 0px; font-weight: normal; padding: 0px; width: 414px;" align="center" valign="middle">
-                  <table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-                    <tbody>
-                      <tr>
-                        <td style="border-collapse: collapse; font-size: 0px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px; word-break: break-word;"
-                          align="center">
-                          <table class="hbnb-imgBox" role="presentation" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-spacing: 0px; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"
-                            align="center" border="0">
-                            <tbody>
-                              <tr>
-                                <td style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 414px;">
-                                  <img src="/static/mdesigner/images/AMXIMG_414x320_placeholder.png" alt="Alt Text" title="" height="320" style="-ms-interpolation-mode: bicubic; border: 0 none; display: block; height: 320px; line-height: 100%; outline: none; text-decoration: none; width: 414px;"
-                                    width="414">
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </th>
-
-              </tr>
-            </tbody>
-          </table>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<!--[if mso | IE]>
-</td></tr></table>
-<![endif]-->
-<!-- END: HB02 Block Right -->
-
-`
-}
-
-// function loadTheTextOne(){
-//
-//     mailCanvas.innerHTML +=
-// `
-// <!-- START: TM01 Newsletter Header -->
-// <!--[if mso | IE]>
-// <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="620" align="center" style="width:620px;">
-// <tr>
-// <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
-// <![endif]-->
-// <div style="background: #999999; margin: 0px auto; max-width: 620px;">
-//   <table role="presentation" cellpadding="0" cellspacing="0" style="border-collapse: collapse; font-size: 0px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;"
-//     align="center" border="0" bgcolor="#999999">
-//     <tbody>
-//       <tr>
-//         <td style="border-collapse: collapse; direction: ltr; font-size: 0px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 40px;" align="center" valign="top">
-//           <table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-//             <tbody>
-//               <tr>
-//                 <td style="border-collapse: collapse; font-size: 0px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px; word-break: break-word;">
-//                   <table role="presentation" cellpadding="0" cellspacing="0" style="border-collapse: collapse; font-size: 0px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;"
-//                     align="center" border="0">
-//                     <tbody>
-//                       <tr>
-//                         <td class="tm-news-head" style="border-collapse: collapse; direction: ltr; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"
-//                           valign="top">
-//                           <table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-//                             <tbody>
-//                               <tr>
-//
-//                                 <th class="tm-heading" style="font-weight: normal;" align="left">
-//                                   <div class="tm-centre h1" style="color: #333333; cursor: auto; font-family: HelveticaNeue-Light, Helvetica Neue Light, Helvetica, Arial, sans-serif; font-size: 30px; line-height: 35px;"
-//                                     align="left">
-//                                     Header Text
-//                                   </div>
-//                                 </th>
-//
-//                                 <th class="tm-gutter" width="20px" style="font-weight: normal;" align="left"> </th>
-//
-//                                 <th class="tm-heading" style="font-weight: normal;" align="left">
-//                                   <div class="tm-centre h1" style="color: #333333; cursor: auto; font-family: HelveticaNeue-Light, Helvetica Neue Light, Helvetica, Arial, sans-serif; font-size: 30px; line-height: 35px;"
-//                                     align="right">
-//                                     <p style="display: block; margin: 0;">1-0-1</p>
-//                                   </div>
-//                                 </th>
-//
-//                               </tr>
-//                             </tbody>
-//                           </table>
-//                         </td>
-//                       </tr>
-//                     </tbody>
-//                   </table>
-//                 </td>
-//               </tr>
-//               <tr>
-//                 <td style="border-collapse: collapse; font-size: 0px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px; word-break: break-word;">
-//                   <table role="presentation" cellpadding="0" cellspacing="0" style="border-collapse: collapse; font-size: 0px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;"
-//                     align="center" border="0">
-//                     <tbody>
-//                       <tr>
-//                         <td align="left" style="border-collapse: collapse; color: #333333; cursor: auto; font-family: HelveticaNeue, Helvetica Neue Regular, Helvetica, Arial, sans-serif; font-size: 15px; line-height: 22px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-top: 20px; word-break: break-word;"
-//                           class="tm-centre">
-//                           <p style="display: block; margin: 0;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rutrum enim eget magna.</p>
-//                         </td>
-//                       </tr>
-//                     </tbody>
-//                   </table>
-//                 </td>
-//               </tr>
-//             </tbody>
-//           </table>
-//         </td>
-//       </tr>
-//     </tbody>
-//   </table>
-// </div>
-// <!--[if mso | IE]>
-// </td></tr></table>
-// <![endif]-->
-// <!-- END: TM01 Newsletter Header -->
-//
-//
-// <!-- START: SEPARATOR -->
-// <!--[if mso | IE]>
-// <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="620" align="center" style="width:620px;">
-// <tr>
-// <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
-// <![endif]-->
-// <div style="background: #F7F8F9; margin: 0px auto; max-width: 620px;">
-//   <table role="presentation" cellpadding="0" cellspacing="0" style="border-collapse: collapse; font-size: 0px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;"
-//     align="center" border="0" bgcolor="#F7F8F9">
-//     <tbody>
-//       <tr>
-//         <td style="border-collapse: collapse; direction: ltr; font-size: 0px; line-height: 1px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px;"
-//           height="10" align="center" valign="top"> </td>
-//       </tr>
-//     </tbody>
-//   </table>
-// </div>
-// <!--[if mso | IE]>
-// </td></tr></table>
-// <![endif]-->
-// <!-- END: SEPARATOR -->
-// `
-
-bHeader.addEventListener("click", theButton.bind(this, dropDown), false);
-bHero.addEventListener("click", theButton.bind(this, dropdownHero), false);
-bText.addEventListener("click", theButton.bind(this, dropdownText), false);
-bImage.addEventListener("click", theButton.bind(this, dropdownImage), false);
-bExtra.addEventListener("click", theButton.bind(this, dropdownExtra), false);
-bFooter.addEventListener("click", theButton.bind(this, dropdownFooter), false);
-bWidget.addEventListener("click", theButton.bind(this, dropdownWidget), false);
+// bHeader.addEventListener("click", theButton.bind(this, dropDown), false);
+// bHero.addEventListener("click", theButton.bind(this, dropdownHero), false);
+// bText.addEventListener("click", theButton.bind(this, dropdownText), false);
+// bImage.addEventListener("click", theButton.bind(this, dropdownImage), false);
+// bExtra.addEventListener("click", theButton.bind(this, dropdownExtra), false);
+// bFooter.addEventListener("click", theButton.bind(this, dropdownFooter), false);
+// bWidget.addEventListener("click", theButton.bind(this, dropdownWidget), false);
 
 
-moduleOne.addEventListener("click", loadTheHTML);
-heroOne.addEventListener("click", loadTheHeroOne);
-heroOne2.addEventListener("click", loadTheHeroOne2);
-// textOne.addEventListener("click", loadTheTextOne);
+// moduleOne.addEventListener("click", loadTheHTML);
+// heroOne.addEventListener("click", loadTheHeroOne);
 // theButton(dropDown);
 
 
@@ -655,7 +430,7 @@ dotHam.style.marginLeft = '1%';
 usuario.style.opacity = "0.0";
 informacion.style.marginLeft = "-700px";
 usuario.style.display = "none";
-headers.style.backgroundColor = "#757575";
+// headers.style.backgroundColor = "#757575";
 
 
 
@@ -688,10 +463,10 @@ function openMenu(){
 
 
 
-modulesMenus.style.width = "333px";
-hModules.addEventListener('click', openModules);
+// modulesMenus.style.width = "333px";
+// hModules.addEventListener('click', openModules);
 // fatherModules.style.marginRight = "0px";
-allModules.style.marginLeft = "0px";
+// allModules.style.marginLeft = "0px";
 
 
 function openModules(){

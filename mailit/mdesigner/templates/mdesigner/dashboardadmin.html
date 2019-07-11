@@ -2,79 +2,115 @@
 
 {% block contenido %}
 <body>
-  <a href="/dashboard/">Ir a Dashboard</a>
-  <form id= "logForm" action="" method="POST">
-    {% csrf_token %}
-    <h4>Create User</h4>
-    <input id="username_signup" type="text" name="username_signup" maxlength="10" placeholder="User name" required>
-    <input id="email_signup" type="email" name="email_signup" maxlength="30" placeholder="E-mail" required>
-    <input id="password_signup" type="password" name="password_signup" maxlength="30" placeholder="Password" required>
-    <input id="password_confirmation" type="password" name="password_confirmation" maxlength="30" placeholder="Repeat Password" required>
-    <input type="submit" name="Create_User" class="bSign" value="Create User"/>
-  </form>
 
 
-  <form id= "logForm" action="" method="POST">
-    {% csrf_token %}
-    <h4>Create Company</h4>
-    <input id="companyname_new" type="text" name="companyname_new" placeholder="Company name" required>
-    <input id="shortcompany_new" type="text" name="shortcompany_new" maxlength="10" placeholder="Company short name" required>
-    <input type="submit" name="Create_Company" class="bSign" value="Create Company"/>
-  </form>
 
-  <form id= "logForm" action="" method="POST">
-    {% csrf_token %}
-    <h4>Create Target</h4>
-    Company:
-    <select name="companyname_target">
-      {% for c in companies %}
-      <option value="{{ c.id }}">{{ c }}</option>
-      {% endfor %}
-    </select>
-    <input id="targetname1" type="text" name="targetname1" placeholder="Target1 (optional)" />
-    <input id="targetname2" type="text" name="targetname2" placeholder="Target2 (optional)" />
-    <input id="targetname3" type="text" name="targetname3" placeholder="Target3 (optional)" />
-    <input id="targetname4" type="text" name="targetname4" placeholder="Target4 (optional)" />
-    <input id="targetname5" type="text" name="targetname5" placeholder="Target5 (optional)" />
-    <input id="targetname6" type="text" name="targetname6" placeholder="Target6 (optional)" />
-    <!-- <input id="assignasset" type="checkbox" name="assignasset" value="">Asset1<br/>
-    <input id="assignasset2" type="checkbox" name="assignasset2" value="">Asset2<br/> -->
-    <input type="submit" name="Create_Target" class="bSign" value="Create Target"/>
-  </form>
+<section class="portadaAdmin">
+
+    <a class="goDashboard" href="/dashboard/">Ir a Dashboard</a>
 
 
-  <form id= "logForm" action="" method="POST">
-    {% csrf_token %}
-    <h4>Assign Users to Company</h4>
-    Company:
-    <select name="company_assign">
-      {% for c in companies %}
-      <option value="{{ c.id }}">{{ c }}</option>
-      {% endfor %}
-    </select>
-    User:
-    <select name="user_assign">
-      {% for u in users %}
-      <option value="{{ u.id }}">{{ u }}</option>
-      {% endfor %}
-    </select>
-    <input type="submit" name="Assign" class="bSign" value="Assign"/>
-  </form>
+    <section class="tarjetaLogInAdmin">
 
-  <form id= "logForm" action="" method="POST">
-    {% csrf_token %}
-    <h4>Create Asset</h4>
-    <p>In progress<br>
-      <br>Module
-      <br>Asset Name
-      <br>image
-      <br>image base size
-      <br>image
-      <br>image height size
-      <br>text
-      <br>text font
-      <br>text size
-    </p>
-  </form>
+      <div class="logInWraper">
+
+
+      <form id= "logForm" action="" method="POST">
+        {% csrf_token %}
+        <h4>Create User</h4>
+        <input class="campoTop" id="username_signup" type="text" name="username_signup" maxlength="10" placeholder="User name" required>
+        <input class="campoTop" id="email_signup" type="email" name="email_signup" maxlength="30" placeholder="E-mail" required>
+        <input class="campoTop"  id="password_signup" type="password" name="password_signup" maxlength="30" placeholder="Password" required>
+        <input class="campoTop" id="password_confirmation" type="password" name="password_confirmation" maxlength="30" placeholder="Repeat Password" required>
+        <input type="submit" name="Create_User" class="bSign btnForm btnEnviar" value="Create User"/>
+      </form>
+
+
+      <form id= "logForm" action="" method="POST">
+        {% csrf_token %}
+        <h4>Create Company</h4>
+        <input class="campoTop"  id="companyname_new" type="text" name="companyname_new" placeholder="Company name" required>
+        <input class="campoTop"  id="shortcompany_new" type="text" name="shortcompany_new" maxlength="10" placeholder="Company short name" required>
+        <input type="submit" name="Create_Company" class="bSign btnForm btnEnviar" value="Create Company"/>
+      </form>
+
+    </div>
+
+</section>
+
+<section class="tarjetaLogInAdmin">
+
+  <div class="logInWraper">
+
+      <form id= "logForm" action="" method="POST">
+        {% csrf_token %}
+        <h4>Create Target</h4>
+        Company:
+        <select name="companyname_target">
+          {% for c in companies %}
+          <option value="{{ c.id }}">{{ c }}</option>
+          {% endfor %}
+        </select>
+        <input class="campoTop" id="targetname1" type="text" name="targetname1" placeholder="Target1 (optional)" />
+        <input class="campoTop" id="targetname2" type="text" name="targetname2" placeholder="Target2 (optional)" />
+        <input class="campoTop" id="targetname3" type="text" name="targetname3" placeholder="Target3 (optional)" />
+        <input class="campoTop" id="targetname4" type="text" name="targetname4" placeholder="Target4 (optional)" />
+        <input class="campoTop" id="targetname5" type="text" name="targetname5" placeholder="Target5 (optional)" />
+        <input class="campoTop" id="targetname6" type="text" name="targetname6" placeholder="Target6 (optional)" />
+        <!-- <input id="assignasset" type="checkbox" name="assignasset" value="">Asset1<br/>
+        <input id="assignasset2" type="checkbox" name="assignasset2" value="">Asset2<br/> -->
+        <input type="submit" name="Create_Target" class="bSign btnForm btnEnviar" value="Create Target"/>
+      </form>
+
+
+      <form id= "logForm" action="" method="POST">
+        {% csrf_token %}
+        <h4>Assign Users to Company</h4>
+        Company:
+        <select name="company_assign">
+          {% for c in companies %}
+          <option value="{{ c.id }}">{{ c }}</option>
+          {% endfor %}
+        </select>
+        User:
+        <select name="user_assign">
+          {% for u in users %}
+          <option value="{{ u.id }}">{{ u }}</option>
+          {% endfor %}
+        </select>
+        <input type="submit" name="Assign" class="bSign btnForm btnEnviar" value="Assign"/>
+      </form>
+
+    </div>
+
+</section>
+
+
+<section class="tarjetaLogInAdmin">
+  <div class="logInWraper">
+      <form id= "logForm" action="" method="POST">
+        {% csrf_token %}
+        <h4>Create Asset</h4>
+        <p>In progress<br>
+          <br>Module
+          <br>Asset Name
+          <br>image
+          <br>image base size
+          <br>image
+          <br>image height size
+          <br>text
+          <br>text font
+          <br>text size
+        </p>
+      </form>
+
+    </div>
+</section>
+
+    </section>
 </body>
 {% endblock contenido %}
+
+{% block js %}
+<script src="/static/mdesigner/js/newproject.js"></script>
+{% endblock js %}
